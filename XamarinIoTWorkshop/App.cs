@@ -6,6 +6,6 @@ namespace XamarinIoTWorkshop
 {
     public class App : Application
     {
-        public App() => MainPage = new MainPage();
+        public App() => MainPage = new DataCollectionPage();
     }
 }

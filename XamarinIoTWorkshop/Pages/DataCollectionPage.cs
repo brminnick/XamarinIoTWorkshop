@@ -13,12 +13,15 @@ namespace XamarinIoTWorkshop
         {
             _dataCollectionButton = new Button();
             _dataCollectionButton.SetBinding(Button.TextProperty, nameof(ViewModel.DataCollectionButtonText));
+            _dataCollectionButton.SetBinding(Button.CommandProperty, nameof(ViewModel.DataCollectionButtonCommand));
 
             var dataCollectedLabel = new Label();
             dataCollectedLabel.SetBinding(Label.TextProperty, nameof(ViewModel.DataCollectedLabelText));
 
             var flexLayout = new FlexLayout
             {
+                Direction = FlexDirection.Column,
+                AlignItems = FlexAlignItems.Center,
                 Children = {
                     _dataCollectionButton,
                     dataCollectedLabel
