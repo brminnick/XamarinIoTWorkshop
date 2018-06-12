@@ -1,12 +1,11 @@
 ﻿using System;
+using System.Numerics;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using System.Linq;
-using System.Text;
-using System.Numerics;
 
 namespace XamarinIoTWorkshop
 {
@@ -22,6 +21,14 @@ namespace XamarinIoTWorkshop
         string _dataCollectedLabelText = string.Empty;
         string _dataCollectionButtonText = _beginDataCollectionText;
         ICommand _dataCollectionButtonCommand;
+        #endregion
+
+        #region Constructors
+        public DataCollectionViewModel()
+        {
+            Accelerometer.ReadingChanged += HandleAccelerometerReadingChanged;
+            Gyroscope.ReadingChanged += HandleGyroscopeReadingChanged;
+        }
         #endregion
 
         #region Properties
@@ -60,18 +67,17 @@ namespace XamarinIoTWorkshop
         {
             _isDataCollectionActive = true;
 
-            Accelerometer.ReadingChanged += HandleAccelerometerReadingChanged;
-            Gyroscope.ReadingChanged += HandleGyroscopeReadingChanged;
-
             StartGeolocationDataCollection();
+            Accelerometer.Start(SensorSpeed.Normal);
+            Gyroscope.Start(SensorSpeed.Normal);
         }
 
         void StopDataCollection()
         {
             _isDataCollectionActive = false;
 
-            Accelerometer.ReadingChanged -= HandleAccelerometerReadingChanged;
-            Gyroscope.ReadingChanged -= HandleGyroscopeReadingChanged;
+            Accelerometer.Stop();
+            Gyroscope.Stop();
         }
         
         async void StartGeolocationDataCollection()

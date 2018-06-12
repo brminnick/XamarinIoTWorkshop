@@ -15,6 +15,9 @@ namespace XamarinIoTWorkshop.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, bundle);
+
             LoadApplication(new App());
         }
     }

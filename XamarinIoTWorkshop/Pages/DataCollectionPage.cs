@@ -4,16 +4,12 @@ namespace XamarinIoTWorkshop
 {
     public class DataCollectionPage : BaseContentPage<DataCollectionViewModel>
     {
-        #region Constant Fields
-        readonly Button _dataCollectionButton;
-        #endregion
-
         #region Constructors
         public DataCollectionPage()
         {
-            _dataCollectionButton = new Button();
-            _dataCollectionButton.SetBinding(Button.TextProperty, nameof(ViewModel.DataCollectionButtonText));
-            _dataCollectionButton.SetBinding(Button.CommandProperty, nameof(ViewModel.DataCollectionButtonCommand));
+            var dataCollectionButton = new Button();
+            dataCollectionButton.SetBinding(Button.TextProperty, nameof(ViewModel.DataCollectionButtonText));
+            dataCollectionButton.SetBinding(Button.CommandProperty, nameof(ViewModel.DataCollectionButtonCommand));
 
             var dataCollectedLabel = new Label();
             dataCollectedLabel.SetBinding(Label.TextProperty, nameof(ViewModel.DataCollectedLabelText));
@@ -23,10 +19,12 @@ namespace XamarinIoTWorkshop
                 Direction = FlexDirection.Column,
                 AlignItems = FlexAlignItems.Center,
                 Children = {
-                    _dataCollectionButton,
+                    dataCollectionButton,
                     dataCollectedLabel
                 }
             };
+
+            Padding = new Thickness(20);
 
             Content = flexLayout;
         }

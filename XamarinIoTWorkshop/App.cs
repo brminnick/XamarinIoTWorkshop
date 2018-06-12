@@ -7,5 +7,12 @@ namespace XamarinIoTWorkshop
     public class App : Application
     {
         public App() => MainPage = new DataCollectionPage();
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+
+        }
     }
 }
