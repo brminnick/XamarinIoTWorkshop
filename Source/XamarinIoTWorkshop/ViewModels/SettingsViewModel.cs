@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
 {
-    public class DataCollectionViewModel : BaseViewModel
+    public class SettingsViewModel : BaseViewModel
     {
         #region Constant Fields
         const string _beginDataCollectionText = "Begin Data Collection";
@@ -24,7 +24,7 @@ namespace XamarinIoTWorkshop
         #endregion
 
         #region Constructors
-        public DataCollectionViewModel()
+        public SettingsViewModel()
         {
             Accelerometer.ReadingChanged += HandleAccelerometerReadingChanged;
             Gyroscope.ReadingChanged += HandleGyroscopeReadingChanged;
@@ -129,14 +129,14 @@ namespace XamarinIoTWorkshop
         {
             UpdateDataCollectedLabel(e.Reading.Acceleration, "Accelerometer");
 
-            await IoTDeviceService.SendMessage(e.Reading.Acceleration).ConfigureAwait(false);
+            await IoTDeviceService.SendMessage(e.Reading).ConfigureAwait(false);
         }
 
         async void HandleGyroscopeReadingChanged(GyroscopeChangedEventArgs e)
         {
             UpdateDataCollectedLabel(e.Reading.AngularVelocity, "Gyroscope");
 
-            await IoTDeviceService.SendMessage(e.Reading.AngularVelocity).ConfigureAwait(false);
+            await IoTDeviceService.SendMessage(e.Reading).ConfigureAwait(false);
         }
 
         void UpdateDataCollectedLabel(Vector3 vector, string dataType)

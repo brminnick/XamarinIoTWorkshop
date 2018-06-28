@@ -9,15 +9,15 @@
         <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.17.0" />
         <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
         <PackageReference Include="Microsoft.Azure.Devices" Version="1.16.0" />
-        <PackageReference Include="Xamarin.Essentials" Version="0.7.0.17-preview" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.0" />
+        <PackageReference Include="Xamarin.Essentials" Version="0.8.0-preview" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Remove="App.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Pages\" />
-        <Folder Include="ViewModles\" />
+        <Folder Include="ViewModels\" />
         <Folder Include="Services\" />
         <Folder Include="Services\Base\" />
         <Folder Include="Constants\" />

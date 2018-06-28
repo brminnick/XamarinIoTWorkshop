@@ -163,7 +163,7 @@
       <Version>3.1.0.583944</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
-      <Version>0.7.0.17-preview</Version>
+      <Version>0.8.0-preview</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -172,5 +172,15 @@
       <Project>{5285089C-9B0B-4E73-B655-5F15A07A1C2A}</Project>
       <Name>XamarinIoTWorkshop</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Accelerometer%402x.png" />
+    <BundleResource Include="Resources\Accelerometer%403x.png" />
+    <BundleResource Include="Resources\Geolocation%402x.png" />
+    <BundleResource Include="Resources\Geolocation%403x.png" />
+    <BundleResource Include="Resources\Gyroscope%402x.png" />
+    <BundleResource Include="Resources\Gyroscope%403x.png" />
+    <BundleResource Include="Resources\Settings%402x.png" />
+    <BundleResource Include="Resources\Settings%403x.png" />
   </ItemGroup>
 </Project>

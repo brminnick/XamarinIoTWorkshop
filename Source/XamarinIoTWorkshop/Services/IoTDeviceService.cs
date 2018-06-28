@@ -35,7 +35,9 @@ namespace XamarinIoTWorkshop
             if (_device is null)
                 _device = await AddDeviceAsync().ConfigureAwait(false);
 
-            var eventMessage = new Microsoft.Azure.Devices.Client.Message(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(data)));
+            var jsonData = await Task.Run(() => JsonConvert.SerializeObject(data)).ConfigureAwait(false);
+
+            var eventMessage = new Microsoft.Azure.Devices.Client.Message(Encoding.UTF8.GetBytes(jsonData));
 
             await SendEvent(eventMessage).ConfigureAwait(false);
         }
