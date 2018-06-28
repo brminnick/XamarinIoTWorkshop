@@ -30,7 +30,7 @@ namespace XamarinIoTWorkshop
         #endregion
 
         #region Methods
-        public static async Task SendData<T>(T data)
+        public static async Task SendMessage<T>(T data)
         {
             if (_device is null)
                 _device = await AddDeviceAsync().ConfigureAwait(false);
@@ -60,7 +60,7 @@ namespace XamarinIoTWorkshop
             }
         }
 
-        static async Task<DeviceClient> GetDeviceClient()
+        static async ValueTask<DeviceClient> GetDeviceClient()
         {
             if (_device is null)
                 _device = await AddDeviceAsync().ConfigureAwait(false);

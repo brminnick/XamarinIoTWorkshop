@@ -31,6 +31,10 @@ namespace XamarinIoTWorkshop
         }
         #endregion
 
+        #region Events
+        public event EventHandler<Type> FeatureNotSupportedExceptionThrown;
+        #endregion
+
         #region Properties
         public ICommand DataCollectionButtonCommand => _dataCollectionButtonCommand ??
             (_dataCollectionButtonCommand = new Command(ExecuteDataCollectionButtonCommand));
@@ -68,18 +72,41 @@ namespace XamarinIoTWorkshop
             _isDataCollectionActive = true;
 
             StartGeolocationDataCollection();
-            Accelerometer.Start(SensorSpeed.Normal);
-            Gyroscope.Start(SensorSpeed.Normal);
+
+            try
+            {
+                Accelerometer.Start(SensorSpeed.Normal);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                OnFeatureNotSupportedExceptionThrown(typeof(Accelerometer));
+            }
+
+            try
+            {
+                Gyroscope.Start(SensorSpeed.Normal);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                OnFeatureNotSupportedExceptionThrown(typeof(Gyroscope));
+            }
         }
 
         void StopDataCollection()
         {
             _isDataCollectionActive = false;
 
-            Accelerometer.Stop();
-            Gyroscope.Stop();
+            try
+            {
+                Accelerometer.Stop();
+                Gyroscope.Stop();
+            }
+            catch (FeatureNotSupportedException)
+            {
+
+            }
         }
-        
+
         async void StartGeolocationDataCollection()
         {
             do
@@ -91,7 +118,7 @@ namespace XamarinIoTWorkshop
 
                 _dataCollectedLabelText = $"{_dataCollectedLabelText}\n Latitude: {location.Latitude}\n Longitude: {location.Longitude}\n";
 
-                await IoTDeviceService.SendData(location).ConfigureAwait(false);
+                await IoTDeviceService.SendMessage(location).ConfigureAwait(false);
 
                 await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
 
@@ -102,14 +129,14 @@ namespace XamarinIoTWorkshop
         {
             UpdateDataCollectedLabel(e.Reading.Acceleration, "Accelerometer");
 
-            await IoTDeviceService.SendData(e.Reading.Acceleration).ConfigureAwait(false);
+            await IoTDeviceService.SendMessage(e.Reading.Acceleration).ConfigureAwait(false);
         }
 
         async void HandleGyroscopeReadingChanged(GyroscopeChangedEventArgs e)
         {
             UpdateDataCollectedLabel(e.Reading.AngularVelocity, "Gyroscope");
 
-            await IoTDeviceService.SendData(e.Reading.AngularVelocity).ConfigureAwait(false);
+            await IoTDeviceService.SendMessage(e.Reading.AngularVelocity).ConfigureAwait(false);
         }
 
         void UpdateDataCollectedLabel(Vector3 vector, string dataType)
@@ -121,6 +148,9 @@ namespace XamarinIoTWorkshop
 
             _dataCollectedLabelText = $"{_dataCollectedLabelText} {accelerometerTextBuilder.ToString()}";
         }
+
+        void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType) =>
+            FeatureNotSupportedExceptionThrown?.Invoke(this, xamarinEssentialsType);
         #endregion
     }
 }

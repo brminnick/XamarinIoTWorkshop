@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+
+using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
 {
@@ -33,13 +35,16 @@ namespace XamarinIoTWorkshop
         #region Methods
         protected override void SubscribeEventHandlers()
         {
-
+            ViewModel.FeatureNotSupportedExceptionThrown += HandleFeatureNotSupportedExceptionThrown;
         }
 
         protected override void UnsubscribeEventHandlers()
         {
-
+            ViewModel.FeatureNotSupportedExceptionThrown -= HandleFeatureNotSupportedExceptionThrown;
         }
+
+        void HandleFeatureNotSupportedExceptionThrown(object sender, Type type) =>
+            Device.BeginInvokeOnMainThread(async () => await DisplayAlert($"{type.Name} Unavailable", $"{type.Name} data will not be collected because it is not supported by this device", "OK"));
         #endregion
     }
 }
