@@ -10,17 +10,24 @@ namespace XamarinIoTWorkshop
             Icon = "Accelerometer";
             Title = "Accelerometer";
 
-            var circularGuage = new SfCircularGauge();
-            var circularGuageScale = new Scale
-            {
-                StartValue = -1,
-                EndValue = 1,
-            };
-            var circularGuageScalePointer = new Pointer();
+            var circularGuageScalePointer = new NeedlePointer();
             circularGuageScalePointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.XValue));
 
-            circularGuage.Scales.Add(circularGuageScale);
-            circularGuageScale.Pointers.Add(circularGuageScalePointer);
+            var circularGuageScale = new Scale
+            {
+                Interval = 0.2,
+                StartValue = -1.0,
+                EndValue = 1.0,
+                ShowTicks = true,
+                ShowLabels = true,
+                Pointers = { circularGuageScalePointer },
+                MinorTicksPerInterval = 4
+            };
+
+            var circularGuage = new SfCircularGauge
+            {
+                Scales = { circularGuageScale }
+            };
 
             var dataCollectionButton = new Button();
             dataCollectionButton.SetBinding(Button.CommandProperty, nameof(ViewModel.DataCollectionButtonCommand));
@@ -31,20 +38,14 @@ namespace XamarinIoTWorkshop
                 Margin = new Thickness(30),
                 Direction = FlexDirection.Column,
                 AlignItems = FlexAlignItems.Center,
+                AlignContent = FlexAlignContent.End,
                 Children = {
+                    circularGuage,
                     dataCollectionButton,
-                    circularGuage
                 }
             };
 
-            Content = new StackLayout
-            {
-                VerticalOptions = LayoutOptions.Center,
-                Children = {
-                    dataCollectionButton,
-                    circularGuage,
-                }
-            };
+            Content = flexLayout;
         }
 
         protected override void SubscribeEventHandlers()

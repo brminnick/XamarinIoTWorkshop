@@ -1,6 +1,8 @@
 ﻿using Foundation;
 using UIKit;
 
+using XamarinIoTWorkshop.Shared;
+
 namespace XamarinIoTWorkshop.iOS
 {
     [Register(nameof(AppDelegate))]
@@ -8,7 +10,7 @@ namespace XamarinIoTWorkshop.iOS
     {
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(SyncfusionConstants.LicenseKey);
+            SyncfusionServices.InitializeSyncfusion();
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

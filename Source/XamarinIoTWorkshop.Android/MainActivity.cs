@@ -1,6 +1,8 @@
 ﻿using Android.App;
 using Android.OS;
 
+using XamarinIoTWorkshop.Shared;
+
 namespace XamarinIoTWorkshop.Droid
 {
     [Activity(Label = "XamarinIoTWorkshop", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true)]
@@ -13,7 +15,7 @@ namespace XamarinIoTWorkshop.Droid
 
             base.OnCreate(savedInstanceState);
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(SyncfusionConstants.LicenseKey);
+            SyncfusionServices.InitializeSyncfusion();
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
