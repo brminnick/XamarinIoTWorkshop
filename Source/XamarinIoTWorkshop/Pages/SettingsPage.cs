@@ -9,6 +9,9 @@ namespace XamarinIoTWorkshop
         #region Constructors
         public SettingsPage()
         {
+            Icon = "Settings";
+            Title = "Settings";
+
             var dataCollectionButton = new Button();
             dataCollectionButton.SetBinding(Button.TextProperty, nameof(ViewModel.DataCollectionButtonText));
             dataCollectionButton.SetBinding(Button.CommandProperty, nameof(ViewModel.DataCollectionButtonCommand));

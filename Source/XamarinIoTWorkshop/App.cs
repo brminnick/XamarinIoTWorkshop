@@ -8,31 +8,15 @@ namespace XamarinIoTWorkshop
     {
         public App()
         {
-            var tabbedPage = new Xamarin.Forms.TabbedPage();
-
-            tabbedPage.Children.Add(new AccelerometerPage
+            var tabbedPage = new Xamarin.Forms.TabbedPage
             {
-                Icon = "Accelerometer",
-                Title = "Accelerometer"
-            });
-
-            tabbedPage.Children.Add(new GeolocationPage
-            {
-                Icon = "Geolocation",
-                Title = "Geolocation"
-            });
-
-            tabbedPage.Children.Add(new GyroscopePage
-            {
-                Icon = "Gyroscope",
-                Title = "Gyroscope"
-            });
-
-            tabbedPage.Children.Add(new SettingsPage
-            {
-                Icon = "Settings",
-                Title = "Settings"
-            });
+                Children = {
+                    new AccelerometerPage(),
+                    new GeolocationPage(),
+                    new GyroscopePage(),
+                    new SettingsPage()
+                }
+            };
 
             tabbedPage.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 

@@ -5,6 +5,8 @@ namespace XamarinIoTWorkshop
     {
         public GeolocationPage()
         {
+            Icon = "Geolocation";
+            Title = "Geolocation";
         }
 
         protected override void SubscribeEventHandlers()
