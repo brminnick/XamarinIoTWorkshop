@@ -165,6 +165,9 @@
     <PackageReference Include="Xamarin.Essentials">
       <Version>0.8.0-preview</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge.IOS">
+      <Version>16.2.0.42</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

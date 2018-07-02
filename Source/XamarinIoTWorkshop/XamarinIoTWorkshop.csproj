@@ -11,6 +11,7 @@
         <PackageReference Include="Microsoft.Azure.Devices" Version="1.16.0" />
         <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.0" />
         <PackageReference Include="Xamarin.Essentials" Version="0.8.0-preview" />
+        <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="16.2.0.42" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Remove="App.xaml" />
@@ -25,5 +26,6 @@
     </ItemGroup>
     <ItemGroup>
       <Compile Remove="Services\Base\BaseHttpClientService.cs" />
+      <Compile Remove="ViewModels\SettingsViewModel.cs" />
     </ItemGroup>
 </Project>

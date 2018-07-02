@@ -14,13 +14,19 @@ namespace XamarinIoTWorkshop
                     new AccelerometerPage(),
                     new GeolocationPage(),
                     new GyroscopePage(),
-                    new SettingsPage()
                 }
             };
 
             tabbedPage.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             MainPage = tabbedPage;
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
         }
     }
 }
