@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Content.PM;
 using Android.OS;
 
 namespace XamarinIoTWorkshop.Droid
@@ -13,6 +12,8 @@ namespace XamarinIoTWorkshop.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(SyncfusionConstants.LicenseKey);
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 

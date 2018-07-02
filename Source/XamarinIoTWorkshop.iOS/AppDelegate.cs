@@ -8,6 +8,8 @@ namespace XamarinIoTWorkshop.iOS
     {
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(SyncfusionConstants.LicenseKey);
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

@@ -37,7 +37,14 @@ namespace XamarinIoTWorkshop
                 }
             };
 
-            Content = flexLayout;
+            Content = new StackLayout
+            {
+                VerticalOptions = LayoutOptions.Center,
+                Children = {
+                    dataCollectionButton,
+                    circularGuage,
+                }
+            };
         }
 
         protected override void SubscribeEventHandlers()

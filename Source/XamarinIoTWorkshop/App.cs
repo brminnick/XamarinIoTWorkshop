@@ -21,12 +21,5 @@ namespace XamarinIoTWorkshop
 
             MainPage = tabbedPage;
         }
-
-        protected override void OnStart()
-        {
-            base.OnStart();
-
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
-        }
     }
 }
