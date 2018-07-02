@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Xamarin.Essentials;
@@ -17,9 +18,12 @@ namespace XamarinIoTWorkshop
         #endregion
 
         #region Fields
-        string _dataCollectedLabelText = string.Empty;
-        string _dataCollectionButtonText = _beginDataCollectionText;
+        string _dataCollectionButtonText = _endDataCollectionText;
         ICommand _dataCollectionButtonCommand;
+        #endregion
+
+        #region Constructors
+        public BaseViewModel() => StartDataCollection();
         #endregion
 
         #region Events
@@ -41,9 +45,6 @@ namespace XamarinIoTWorkshop
         #endregion
 
         #region Methods
-        protected void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType) =>
-            FeatureNotSupportedExceptionThrown?.Invoke(this, xamarinEssentialsType);
-
         protected virtual void StartDataCollection()
         {
             IsDataCollectionActive = true;
@@ -65,6 +66,9 @@ namespace XamarinIoTWorkshop
 
             OnPropertyChanged(propertyname);
         }
+
+        protected void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType) =>
+            FeatureNotSupportedExceptionThrown?.Invoke(this, xamarinEssentialsType);
 
         void ExecuteDataCollectionButtonCommand()
         {

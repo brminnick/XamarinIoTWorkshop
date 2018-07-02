@@ -23,9 +23,11 @@
         <Folder Include="Services\Base\" />
         <Folder Include="Constants\" />
         <Folder Include="Models\" />
+        <Folder Include="Views\" />
+        <Folder Include="Pages\Base\" />
+        <Folder Include="ViewModels\Base\" />
     </ItemGroup>
     <ItemGroup>
       <Compile Remove="Services\Base\BaseHttpClientService.cs" />
-      <Compile Remove="ViewModels\SettingsViewModel.cs" />
     </ItemGroup>
 </Project>

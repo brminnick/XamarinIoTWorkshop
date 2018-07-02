@@ -8,15 +8,5 @@ namespace XamarinIoTWorkshop
             Icon = "Geolocation";
             Title = "Geolocation";
         }
-
-        protected override void SubscribeEventHandlers()
-        {
-           
-        }
-
-        protected override void UnsubscribeEventHandlers()
-        {
-           
-        }
     }
 }

@@ -14,6 +14,7 @@ namespace XamarinIoTWorkshop
                     new AccelerometerPage(),
                     new GeolocationPage(),
                     new GyroscopePage(),
+                    new SettingsPage()
                 }
             };
 

@@ -1,21 +1,10 @@
-﻿using Xamarin.Essentials;
+﻿using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace XamarinIoTWorkshop
 {
-    public class AccelerometerViewModel : BaseViewModel
+    public class AccelerometerViewModel : ThreeAxisViewModel
     {
-        #region Fields
-        double _xValue;
-        #endregion
-
-        #region Properties
-        public double XValue
-        {
-            get => _xValue;
-            set => SetProperty(ref _xValue, value);
-        }
-        #endregion
-
         #region Constructors
         public AccelerometerViewModel() => Accelerometer.ReadingChanged += HandleAccelerometerReadingChanged;
         #endregion
@@ -51,7 +40,7 @@ namespace XamarinIoTWorkshop
 
         async void HandleAccelerometerReadingChanged(AccelerometerChangedEventArgs e)
         {
-            XValue = e.Reading.Acceleration.X;
+            UpdateAxisValues(e.Reading.Acceleration);
 
             await IoTDeviceService.SendMessage(e.Reading).ConfigureAwait(false);
         }

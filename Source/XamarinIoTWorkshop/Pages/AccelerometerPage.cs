@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+
 using Syncfusion.SfGauge.XForms;
 
 namespace XamarinIoTWorkshop
@@ -7,55 +8,43 @@ namespace XamarinIoTWorkshop
     {
         public AccelerometerPage()
         {
+            const int padding = 25;
+
             Icon = "Accelerometer";
             Title = "Accelerometer";
 
-            var circularGuageScalePointer = new NeedlePointer();
-            circularGuageScalePointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.XValue));
+            var xCircularGuage = new CircularGaugeView("X-Axis", -1, 1);
+            xCircularGuage.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.XAxisValue));
 
-            var circularGuageScale = new Scale
-            {
-                Interval = 0.2,
-                StartValue = -1.0,
-                EndValue = 1.0,
-                ShowTicks = true,
-                ShowLabels = true,
-                Pointers = { circularGuageScalePointer },
-                MinorTicksPerInterval = 4
-            };
+            var yCircularGuage = new CircularGaugeView("Y-Axis", -1, 1);
+            yCircularGuage.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.YAxisValue));
 
-            var circularGuage = new SfCircularGauge
-            {
-                Scales = { circularGuageScale }
-            };
+            var zCircularGuage = new CircularGaugeView("Z-Axis", -10, 10);
+            zCircularGuage.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.ZAxisValue));
 
             var dataCollectionButton = new Button();
             dataCollectionButton.SetBinding(Button.CommandProperty, nameof(ViewModel.DataCollectionButtonCommand));
             dataCollectionButton.SetBinding(Button.TextProperty, nameof(ViewModel.DataCollectionButtonText));
 
-            var flexLayout = new FlexLayout
+            var grid = new Grid
             {
-                Margin = new Thickness(30),
-                Direction = FlexDirection.Column,
-                AlignItems = FlexAlignItems.Center,
-                AlignContent = FlexAlignContent.End,
-                Children = {
-                    circularGuage,
-                    dataCollectionButton,
+                Margin = new Thickness(0, 10),
+                RowDefinitions = {
+                    new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(25,GridUnitType.Absolute) }
+                },
+                ColumnDefinitions = {
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) }
                 }
             };
+            grid.Children.Add(xCircularGuage, 0, 0);
+            grid.Children.Add(yCircularGuage, 0, 1);
+            grid.Children.Add(zCircularGuage, 0, 2);
+            grid.Children.Add(dataCollectionButton, 0, 3);
 
-            Content = flexLayout;
-        }
-
-        protected override void SubscribeEventHandlers()
-        {
-
-        }
-
-        protected override void UnsubscribeEventHandlers()
-        {
-
+            Content = grid;
         }
     }
 }
