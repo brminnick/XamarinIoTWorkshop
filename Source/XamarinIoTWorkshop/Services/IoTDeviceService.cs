@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.Azure.Devices;
@@ -15,9 +16,7 @@ namespace XamarinIoTWorkshop
     public static class IoTDeviceService
     {
         #region Constant Fields
-        const string _iotHubConnectionString = "HostName=XamarinIoTHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=ZAmvNEE0Ghp4wMSDdxj+CSgkhxlAKcKiLDqWTfCHkFs=";
-        const string _endpointConnectionString = "Endpoint=sb://iothub-ns-xamariniot-494672-b1c0b6c176.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=ZAmvNEE0Ghp4wMSDdxj+CSgkhxlAKcKiLDqWTfCHkFs=";
-        readonly static Lazy<RegistryManager> _registryManagerHolder = new Lazy<RegistryManager>(() => RegistryManager.CreateFromConnectionString(_iotHubConnectionString));
+        readonly static SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
         #endregion
 
         #region Fields
@@ -29,17 +28,18 @@ namespace XamarinIoTWorkshop
         public static event EventHandler<string> IoTDeviceServiceFailed;
         #endregion
 
-        #region Properties
-        static RegistryManager RegistryManager => _registryManagerHolder.Value;
-        #endregion
-
         #region Methods
         public static async Task SendMessage<T>(T data)
         {
+            
             try
             {
+                await _semaphore.WaitAsync().ConfigureAwait(false);
+
                 if (_device is null)
                     _device = await AddDeviceAsync().ConfigureAwait(false);
+
+                _semaphore.Release();
 
                 var jsonData = await Task.Run(() => JsonConvert.SerializeObject(data)).ConfigureAwait(false);
 
@@ -50,23 +50,37 @@ namespace XamarinIoTWorkshop
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine($"Error retrieving the device: {e.Message}");
+                OnIoTDeviceServiceFailed(e.Message);
             }
         }
 
         static async Task<Device> AddDeviceAsync()
         {
+            RegistryManager registryManager;
+            var connectionString = IotHubSettings.IotHubConnectionString;
+
+            try
+            {
+                registryManager = RegistryManager.CreateFromConnectionString(connectionString);
+            }
+            catch (FormatException e)
+            {
+                System.Diagnostics.Debug.WriteLine($"Invalid Connection String: {e.Message}");
+                throw;
+            }
+
             string deviceId = CrossDeviceInfo.Current.Id;
 
             try
             {
                 var device = new Device(deviceId) { Status = DeviceStatus.Enabled };
-                return await RegistryManager.AddDeviceAsync(device).ConfigureAwait(false);
+                return await registryManager.AddDeviceAsync(device).ConfigureAwait(false);
             }
             catch (DeviceAlreadyExistsException)
             {
                 try
                 {
-                    return await RegistryManager.GetDeviceAsync(deviceId).ConfigureAwait(false);
+                    return await registryManager.GetDeviceAsync(deviceId).ConfigureAwait(false);
                 }
                 catch (Exception e)
                 {

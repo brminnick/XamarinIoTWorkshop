@@ -27,8 +27,10 @@
         <Folder Include="Views\" />
         <Folder Include="Pages\Base\" />
         <Folder Include="ViewModels\Base\" />
+        <Folder Include="Settings\" />
     </ItemGroup>
     <ItemGroup>
       <Compile Remove="Services\Base\BaseHttpClientService.cs" />
+      <Compile Remove="ViewModels\SettingsViewModel.cs" />
     </ItemGroup>
 </Project>

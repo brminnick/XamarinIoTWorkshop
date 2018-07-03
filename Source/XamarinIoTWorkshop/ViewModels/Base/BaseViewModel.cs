@@ -24,7 +24,11 @@ namespace XamarinIoTWorkshop
         #endregion
 
         #region Constructors
-        public BaseViewModel() => StartDataCollection();
+        public BaseViewModel()
+        {
+            IoTDeviceService.IoTDeviceServiceFailed += HandleIoTDeviceServiceFailed;
+            StartDataCollection();
+        }
         #endregion
 
         #region Events
@@ -72,6 +76,8 @@ namespace XamarinIoTWorkshop
 
             OnPropertyChanged(propertyname);
         }
+
+        protected virtual void HandleIoTDeviceServiceFailed(object sender, string message) => DataCollectionButtonCommand?.Execute(null);
 
         protected void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType) =>
             FeatureNotSupportedExceptionThrown?.Invoke(this, xamarinEssentialsType);
