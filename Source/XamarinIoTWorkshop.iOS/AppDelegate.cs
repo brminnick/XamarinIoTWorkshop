@@ -13,6 +13,8 @@ namespace XamarinIoTWorkshop.iOS
             SyncfusionServices.InitializeSyncfusion();
 
             global::Xamarin.Forms.Forms.Init();
+            global::Xamarin.FormsMaps.Init(); 
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(uiApplication, launchOptions);

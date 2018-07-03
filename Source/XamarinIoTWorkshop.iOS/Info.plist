@@ -32,7 +32,9 @@
 	<string>XamarinIoTWorkshop</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use the GPS Sensor</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Collect GPS Data to Send to The Cloud</string>
+	<string>Use the GPS Sensor</string>
 </dict>
 </plist>

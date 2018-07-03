@@ -8,8 +8,6 @@ namespace XamarinIoTWorkshop
     {
         public AccelerometerPage()
         {
-            const int padding = 25;
-
             Icon = "Accelerometer";
             Title = "Accelerometer";
 

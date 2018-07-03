@@ -8,8 +8,6 @@ namespace XamarinIoTWorkshop
     {
         public GyroscopePage()
         {
-            const int padding = 25;
-
             Icon = "Gyroscope";
             Title = "Gyroscope";
 

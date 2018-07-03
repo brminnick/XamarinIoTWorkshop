@@ -18,6 +18,7 @@ namespace XamarinIoTWorkshop.Droid
             SyncfusionServices.InitializeSyncfusion();
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            global::Xamarin.FormsMaps.Init(this, savedInstanceState);
 
             Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
 

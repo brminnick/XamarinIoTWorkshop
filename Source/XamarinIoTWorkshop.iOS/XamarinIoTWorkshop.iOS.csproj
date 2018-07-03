@@ -168,6 +168,9 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>3.1.0.583944</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>3.1.0.583944</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="..\XamarinIoTWorkshop.Shared\XamarinIoTWorkshop.Shared.projitems" Label="Shared" Condition="Exists('..\XamarinIoTWorkshop.Shared\XamarinIoTWorkshop.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -178,11 +181,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Accelerometer%402x.png" />
+    <BundleResource Include="Resources\Gyroscope%402x.png" />
     <BundleResource Include="Resources\Accelerometer%403x.png" />
     <BundleResource Include="Resources\Geolocation%402x.png" />
     <BundleResource Include="Resources\Geolocation%403x.png" />
-    <BundleResource Include="Resources\Gyroscope%402x.png" />
+    <BundleResource Include="Resources\Accelerometer%402x.png" />
     <BundleResource Include="Resources\Gyroscope%403x.png" />
     <BundleResource Include="Resources\Settings%402x.png" />
     <BundleResource Include="Resources\Settings%403x.png" />

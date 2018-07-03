@@ -16,7 +16,7 @@ namespace XamarinIoTWorkshop
 
             try
             {
-                Accelerometer.Start(SensorSpeed.Normal);
+                Accelerometer.Start(SensorSpeed.Fastest);
             }
             catch (FeatureNotSupportedException)
             {

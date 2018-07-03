@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-using Xamarin.Essentials;
+﻿using Xamarin.Essentials;
 
 namespace XamarinIoTWorkshop
 {
@@ -17,7 +15,7 @@ namespace XamarinIoTWorkshop
 
             try
             {
-                Gyroscope.Start(SensorSpeed.Normal);
+                Gyroscope.Start(SensorSpeed.Fastest);
             }
             catch (FeatureNotSupportedException)
             {
@@ -42,10 +40,6 @@ namespace XamarinIoTWorkshop
         async void HandleGyroscopeReadingChanged(GyroscopeChangedEventArgs e)
         {
             UpdateAxisValues(e.Reading.AngularVelocity);
-
-            System.Diagnostics.Debug.WriteLine($"Angualr Velocity X: {e.Reading.AngularVelocity.X}");
-            System.Diagnostics.Debug.WriteLine($"Angualr Velocity Y: {e.Reading.AngularVelocity.Y}");
-            System.Diagnostics.Debug.WriteLine($"Angualr Velocity Z: {e.Reading.AngularVelocity.Z}");
 
             await IoTDeviceService.SendMessage(e.Reading).ConfigureAwait(false);
         }

@@ -31,7 +31,7 @@ namespace XamarinIoTWorkshop
 			catch (Exception e)
 			{
 				OnGeolocationFailed(e);
-				return null;
+                throw;
 			}
 		}
 

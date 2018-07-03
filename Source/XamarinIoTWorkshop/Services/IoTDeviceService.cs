@@ -25,6 +25,10 @@ namespace XamarinIoTWorkshop
         static DeviceClient _deviceClient;
         #endregion
 
+        #region Events
+        public static event EventHandler<string> IoTDeviceServiceFailed;
+        #endregion
+
         #region Properties
         static RegistryManager RegistryManager => _registryManagerHolder.Value;
         #endregion
@@ -32,14 +36,21 @@ namespace XamarinIoTWorkshop
         #region Methods
         public static async Task SendMessage<T>(T data)
         {
-            if (_device is null)
-                _device = await AddDeviceAsync().ConfigureAwait(false);
+            try
+            {
+                if (_device is null)
+                    _device = await AddDeviceAsync().ConfigureAwait(false);
 
-            var jsonData = await Task.Run(() => JsonConvert.SerializeObject(data)).ConfigureAwait(false);
+                var jsonData = await Task.Run(() => JsonConvert.SerializeObject(data)).ConfigureAwait(false);
 
-            var eventMessage = new Microsoft.Azure.Devices.Client.Message(Encoding.UTF8.GetBytes(jsonData));
+                var eventMessage = new Microsoft.Azure.Devices.Client.Message(Encoding.UTF8.GetBytes(jsonData));
 
-            await SendEvent(eventMessage).ConfigureAwait(false);
+                await SendEvent(eventMessage).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error retrieving the device: {e.Message}");
+            }
         }
 
         static async Task<Device> AddDeviceAsync()
@@ -53,7 +64,15 @@ namespace XamarinIoTWorkshop
             }
             catch (DeviceAlreadyExistsException)
             {
-                return await RegistryManager.GetDeviceAsync(deviceId).ConfigureAwait(false);
+                try
+                {
+                    return await RegistryManager.GetDeviceAsync(deviceId).ConfigureAwait(false);
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Error retrieving the device: {e.Message}");
+                    throw;
+                }
             }
             catch (Exception e)
             {
@@ -82,6 +101,8 @@ namespace XamarinIoTWorkshop
             var deviceClient = await GetDeviceClient().ConfigureAwait(false);
             await deviceClient.SendEventAsync(eventMessage).ConfigureAwait(false);
         }
+
+        static void OnIoTDeviceServiceFailed(string message) => IoTDeviceServiceFailed?.Invoke(null, message);
         #endregion
     }
 }

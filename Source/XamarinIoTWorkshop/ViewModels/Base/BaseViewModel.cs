@@ -18,6 +18,7 @@ namespace XamarinIoTWorkshop
         #endregion
 
         #region Fields
+        bool _isDataCollectionActive;
         string _dataCollectionButtonText = _endDataCollectionText;
         ICommand _dataCollectionButtonCommand;
         #endregion
@@ -28,6 +29,7 @@ namespace XamarinIoTWorkshop
 
         #region Events
         public event PropertyChangedEventHandler PropertyChanged;
+        public event EventHandler<bool> DataCollectionStatusChanged;
         public event EventHandler<Type> FeatureNotSupportedExceptionThrown;
         #endregion
 
@@ -41,7 +43,11 @@ namespace XamarinIoTWorkshop
             set => SetProperty(ref _dataCollectionButtonText, value);
         }
 
-        protected bool IsDataCollectionActive { get; private set; }
+        protected bool IsDataCollectionActive
+        {
+            get => _isDataCollectionActive;
+            private set => SetProperty(ref _isDataCollectionActive, value, () => OnDataCollectionStatusChanged(value));
+        }
         #endregion
 
         #region Methods
@@ -85,6 +91,8 @@ namespace XamarinIoTWorkshop
         }
 
         void OnPropertyChanged([CallerMemberName]string name = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
+        void OnDataCollectionStatusChanged(bool isCollectingData) => DataCollectionStatusChanged?.Invoke(this, isCollectingData);
         #endregion
     }
 }
