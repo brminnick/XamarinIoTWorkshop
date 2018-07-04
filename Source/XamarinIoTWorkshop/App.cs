@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+﻿using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -8,17 +10,26 @@ namespace XamarinIoTWorkshop
     {
         public App()
         {
+            var accelerometerPage = new AccelerometerPage();
+            var gyroscopePage = new GyroscopePage();
+            var settingsNavigationPage = new Xamarin.Forms.NavigationPage(new SettingsPage())
+            {
+                Icon = "Settings",
+                Title = "Settings"
+            };
+
+            settingsNavigationPage.On<iOS>().SetPrefersLargeTitles(true);
+
             var tabbedPage = new Xamarin.Forms.TabbedPage
             {
                 Children = {
-                    new AccelerometerPage(),
-                    new GeolocationPage(),
-                    new GyroscopePage(),
-                    new SettingsPage()
+                    accelerometerPage,
+                    gyroscopePage,
+                    settingsNavigationPage
                 }
             };
 
-            tabbedPage.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+            tabbedPage.On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             MainPage = tabbedPage;
         }

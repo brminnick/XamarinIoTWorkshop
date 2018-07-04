@@ -5,10 +5,6 @@ namespace XamarinIoTWorkshop
 {
     public class AccelerometerViewModel : ThreeAxisViewModel
     {
-        #region Constructors
-        public AccelerometerViewModel() => Accelerometer.ReadingChanged += HandleAccelerometerReadingChanged;
-        #endregion
-
         #region Methods
         protected override void StartDataCollection()
         {
@@ -17,6 +13,7 @@ namespace XamarinIoTWorkshop
             try
             {
                 Accelerometer.Start(SensorSpeed.Fastest);
+                Accelerometer.ReadingChanged += HandleAccelerometerReadingChanged;
             }
             catch (FeatureNotSupportedException)
             {
@@ -31,6 +28,7 @@ namespace XamarinIoTWorkshop
             try
             {
                 Accelerometer.Stop();
+                Accelerometer.ReadingChanged -= HandleAccelerometerReadingChanged;
             }
             catch (FeatureNotSupportedException)
             {
@@ -42,7 +40,14 @@ namespace XamarinIoTWorkshop
         {
             UpdateAxisValues(e.Reading.Acceleration);
 
-            await IoTDeviceService.SendMessage(e.Reading).ConfigureAwait(false);
+            var accelerometerData = new AccelerometerDataModel
+            {
+                AccelerometerX = e.Reading.Acceleration.X,
+                AccelerometerY = e.Reading.Acceleration.Y,
+                AccelerometerZ = e.Reading.Acceleration.Z,
+            };
+
+            await IoTDeviceService.SendMessage(accelerometerData).ConfigureAwait(false);
         }
         #endregion
     }

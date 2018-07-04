@@ -1,47 +1,83 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
 {
     public class SettingsPage : ContentPage
     {
-        readonly Entry _iotHubConnectionStringValueEntry;
+        readonly Switch _isSendDataToAzureEnabledSwitch;
+        readonly Editor _deviceConnectionStringEditor;
 
         public SettingsPage()
         {
-            Icon = "Settings";
-            Title = "Settings";
+            const int labelHeight = 20;
 
-            var iotHubConnectionStringTitleLabel = new Label
+            Padding = new Thickness(20);
+            Title = "Settings";
+            BackgroundColor = Color.FromHex("F4F3FA");
+
+            var deviceConnectionStringLabel = new Label
             {
-                Text = "IoT Hub Connection String",
+                Text = "Device Connection String",
                 FontAttributes = FontAttributes.Bold
             };
 
-            _iotHubConnectionStringValueEntry = new Entry { Placeholder = "IoT Hub Connection String" };
+            var isSendDataToAzureEnabledLabel = new Label
+            {
+                Text = "Send Data To Azure",
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.Start,
+                VerticalTextAlignment = TextAlignment.Center,
+                FontAttributes = FontAttributes.Bold
+            };
 
-            Content = new StackLayout
+            _isSendDataToAzureEnabledSwitch = new Switch
             {
                 HorizontalOptions = LayoutOptions.Start,
-                VerticalOptions = LayoutOptions.Center,
-                Children = {
-                    iotHubConnectionStringTitleLabel,
-                    _iotHubConnectionStringValueEntry
+                VerticalOptions = LayoutOptions.Start
+            };
+            _isSendDataToAzureEnabledSwitch.Toggled += HandleIsSendDataToAzureEnabledSwitchToggled;
+
+            _deviceConnectionStringEditor = new Editor
+            {
+                IsSpellCheckEnabled = false,
+            };
+            _deviceConnectionStringEditor.Completed += HandleDeviceConnectionStringEditorCompleted;
+
+            var grid = new Grid
+            {
+                RowDefinitions = {
+                    new RowDefinition { Height = new GridLength(labelHeight, GridUnitType.Absolute) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(labelHeight, GridUnitType.Absolute) },
+                    new RowDefinition { Height = new GridLength(labelHeight, GridUnitType.Absolute) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }
+                },
+                ColumnDefinitions = {
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) }
                 }
             };
+
+            grid.Children.Add(deviceConnectionStringLabel, 0, 0);
+            grid.Children.Add(_deviceConnectionStringEditor, 0, 1);
+            grid.Children.Add(isSendDataToAzureEnabledLabel, 0, 3);
+            grid.Children.Add(_isSendDataToAzureEnabledSwitch, 0, 4);
+
+            Content = grid;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            _iotHubConnectionStringValueEntry.Text = IotHubSettings.IotHubConnectionString;
+            _deviceConnectionStringEditor.Text = IotHubSettings.DeviceConnectionString;
+            _isSendDataToAzureEnabledSwitch.IsToggled = IotHubSettings.IsSendDataToAzureEnabled;
         }
 
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
+        void HandleIsSendDataToAzureEnabledSwitchToggled(object sender, ToggledEventArgs e) =>
+            IotHubSettings.IsSendDataToAzureEnabled = _isSendDataToAzureEnabledSwitch.IsToggled;
 
-            IotHubSettings.IotHubConnectionString = _iotHubConnectionStringValueEntry.Text;
-        }
+        void HandleDeviceConnectionStringEditorCompleted(object sender, EventArgs e) =>
+            IotHubSettings.DeviceConnectionString = _deviceConnectionStringEditor.Text;
     }
 }

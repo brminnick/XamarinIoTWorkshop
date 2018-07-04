@@ -23,7 +23,13 @@ namespace XamarinIoTWorkshop
             (_startGeolocationCommand = new Command(async () => await StartGeolocationDataCollection().ConfigureAwait(false)));
 
         ICommand SendMessage => _sendMessage ??
-            (_sendMessage = new Command<Location>(async location => await IoTDeviceService.SendMessage(location).ConfigureAwait(false)));
+            (_sendMessage = new Command<Location>(async location =>
+            {
+                var lattitude = location.Latitude;
+                var longitude = location.Longitude;
+
+                await Task.WhenAll(IoTDeviceService.SendMessage(lattitude), IoTDeviceService.SendMessage(lattitude)).ConfigureAwait(false);
+            }));
 
         Location MostRecentLocation
         {
@@ -63,7 +69,8 @@ namespace XamarinIoTWorkshop
                 }
                 catch (Exception)
                 {
-                    DataCollectionButtonCommand?.Execute(null);
+                    StopDataCollection();
+                    DataCollectionButtonText = BeginDataCollectionText;
                 }
 
             } while (IsDataCollectionActive);

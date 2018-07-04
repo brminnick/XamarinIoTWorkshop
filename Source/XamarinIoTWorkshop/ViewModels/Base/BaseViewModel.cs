@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
@@ -13,13 +11,13 @@ namespace XamarinIoTWorkshop
     public class BaseViewModel : INotifyPropertyChanged
     {
         #region Constant Fields
-        protected const string _beginDataCollectionText = "Begin Data Collection";
-        protected const string _endDataCollectionText = "End Data Collection";
+        protected const string BeginDataCollectionText = "Begin Data Collection";
+        protected const string EndDataCollectionText = "End Data Collection";
         #endregion
 
         #region Fields
         bool _isDataCollectionActive;
-        string _dataCollectionButtonText = _endDataCollectionText;
+        string _dataCollectionButtonText = EndDataCollectionText;
         ICommand _dataCollectionButtonCommand;
         #endregion
 
@@ -77,22 +75,26 @@ namespace XamarinIoTWorkshop
             OnPropertyChanged(propertyname);
         }
 
-        protected virtual void HandleIoTDeviceServiceFailed(object sender, string message) => DataCollectionButtonCommand?.Execute(null);
+        protected virtual void HandleIoTDeviceServiceFailed(object sender, string message)
+        {
+            StopDataCollection();
+            DataCollectionButtonText = BeginDataCollectionText;
+        }
 
         protected void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType) =>
             FeatureNotSupportedExceptionThrown?.Invoke(this, xamarinEssentialsType);
 
         void ExecuteDataCollectionButtonCommand()
         {
-            if (DataCollectionButtonText.Equals(_beginDataCollectionText))
+            if (DataCollectionButtonText.Equals(BeginDataCollectionText))
             {
                 StartDataCollection();
-                DataCollectionButtonText = _endDataCollectionText;
+                DataCollectionButtonText = EndDataCollectionText;
             }
             else
             {
                 StopDataCollection();
-                DataCollectionButtonText = _beginDataCollectionText;
+                DataCollectionButtonText = BeginDataCollectionText;
             }
         }
 
