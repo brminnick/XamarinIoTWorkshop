@@ -20,18 +20,22 @@ namespace XamarinIoTWorkshop
             var zCircularGuage = new CircularGaugeView("Z-Axis", -10, 10);
             zCircularGuage.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.ZAxisValue));
 
-            var dataCollectionButton = new Button();
+            var dataCollectionButton = new Button
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
             dataCollectionButton.SetBinding(Button.CommandProperty, nameof(ViewModel.DataCollectionButtonCommand));
             dataCollectionButton.SetBinding(Button.TextProperty, nameof(ViewModel.DataCollectionButtonText));
 
             var grid = new Grid
             {
-                Margin = new Thickness(0, 10),
+                Margin = new Thickness(0, 20),
                 RowDefinitions = {
                     new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
                     new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
                     new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
-                    new RowDefinition { Height = new GridLength(25,GridUnitType.Absolute) }
+                    new RowDefinition { Height = new GridLength(0.25,GridUnitType.Star) }
                 },
                 ColumnDefinitions = {
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) }

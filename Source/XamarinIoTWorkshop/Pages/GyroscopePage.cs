@@ -30,12 +30,12 @@ namespace XamarinIoTWorkshop
 
             var grid = new Grid
             {
-                Margin = new Thickness(0, 10),
+                Margin = new Thickness(0, 20),
                 RowDefinitions = {
-                    new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
-                    new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
-                    new RowDefinition { Height = new GridLength(1,GridUnitType.Star) },
-                    new RowDefinition { Height = new GridLength(25,GridUnitType.Absolute) }
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Star) },
+                    new RowDefinition { Height = new GridLength(0.25, GridUnitType.Star) }
                 },
                 ColumnDefinitions = {
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) }

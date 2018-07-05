@@ -16,7 +16,9 @@ namespace XamarinIoTWorkshop
         static DeviceClient _deviceClient;
         #endregion
 
+        #region Constructors
         static IoTDeviceService() => IotHubSettings.DeviceConnectionStringChanged += HandleDeviceConnectionStringChanged;
+        #endregion
 
         #region Events
         public static event EventHandler<string> IoTDeviceServiceFailed;
