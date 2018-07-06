@@ -54,7 +54,6 @@ namespace XamarinIoTWorkshop
             };
             createdByLabel.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(CreatedByLabelTapped) });
 
-
             var grid = new Grid
             {
                 RowDefinitions = {

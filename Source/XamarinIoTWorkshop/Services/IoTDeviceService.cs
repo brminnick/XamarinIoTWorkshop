@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
-using Microsoft.Azure.Devices;
 using Microsoft.Azure.Devices.Client;
 
 using Newtonsoft.Json;
@@ -34,7 +32,7 @@ namespace XamarinIoTWorkshop
             {
                 var jsonData = await Task.Run(() => JsonConvert.SerializeObject(data)).ConfigureAwait(false);
 
-                var eventMessage = new Microsoft.Azure.Devices.Client.Message(Encoding.UTF8.GetBytes(jsonData));
+                var eventMessage = new Message(Encoding.UTF8.GetBytes(jsonData));
 
                 await SendEvent(eventMessage).ConfigureAwait(false);
             }
@@ -50,10 +48,11 @@ namespace XamarinIoTWorkshop
 
         static Task SendEvent(Microsoft.Azure.Devices.Client.Message eventMessage)
         {
-            var deviceClient = GetDeviceClient();
-
             if (IotHubSettings.IsSendDataToAzureEnabled)
+            {
+                var deviceClient = GetDeviceClient();
                 return deviceClient.SendEventAsync(eventMessage);
+            }
 
             return Task.CompletedTask;
         }
