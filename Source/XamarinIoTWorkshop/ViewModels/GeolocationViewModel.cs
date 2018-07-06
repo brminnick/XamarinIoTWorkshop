@@ -25,20 +25,23 @@ namespace XamarinIoTWorkshop
         ICommand SendMessage => _sendMessage ??
             (_sendMessage = new Command<Location>(async location =>
             {
-                var lattitude = location.Latitude;
-                var longitude = location.Longitude;
+                var geolocationData = new GeolocationDataModel
+                {
+                    Latitude = location.Latitude,
+                    Longitude = location.Longitude
+                };
 
-                await Task.WhenAll(IoTDeviceService.SendMessage(lattitude), IoTDeviceService.SendMessage(lattitude)).ConfigureAwait(false);
+                await IoTDeviceService.SendMessage(geolocationData).ConfigureAwait(false);
             }));
 
         Location MostRecentLocation
         {
             get => _mostRecentLocation;
-            set 
+            set
             {
                 var milesTraveled = Location.CalculateDistance(_mostRecentLocation, value, DistanceUnits.Miles);
 
-                if(milesTraveled > 0.5)
+                if (milesTraveled > 0.5)
                 {
                     _mostRecentLocation = value;
                     OnLocationUpdated(value);

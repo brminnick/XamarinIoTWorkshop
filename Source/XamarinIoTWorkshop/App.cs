@@ -15,7 +15,9 @@ namespace XamarinIoTWorkshop
             var settingsNavigationPage = new Xamarin.Forms.NavigationPage(new SettingsPage())
             {
                 Icon = "Settings",
-                Title = "Settings"
+                Title = "Settings",
+                BarBackgroundColor = Xamarin.Forms.Color.White,
+                BarTextColor = Xamarin.Forms.Color.Black
             };
 
             settingsNavigationPage.On<iOS>().SetPrefersLargeTitles(true);

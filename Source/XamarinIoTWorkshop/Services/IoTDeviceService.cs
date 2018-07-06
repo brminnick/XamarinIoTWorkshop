@@ -25,8 +25,11 @@ namespace XamarinIoTWorkshop
         #endregion
 
         #region Methods
-        public static async Task SendMessage<T>(T data)
+        public static async Task SendMessage<T>(T data) where T : class
         {
+            if (data is null)
+                return;
+
             try
             {
                 var jsonData = await Task.Run(() => JsonConvert.SerializeObject(data)).ConfigureAwait(false);

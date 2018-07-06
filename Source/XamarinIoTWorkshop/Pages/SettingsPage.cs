@@ -44,6 +44,17 @@ namespace XamarinIoTWorkshop
             };
             _deviceConnectionStringEditor.Completed += HandleDeviceConnectionStringEditorCompleted;
 
+            var createdByLabel = new Label
+            {
+                Text = "App Created by Brandon Minnick",
+                FontSize = 12,
+                HorizontalTextAlignment = TextAlignment.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.End
+            };
+            createdByLabel.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(CreatedByLabelTapped) });
+
+
             var grid = new Grid
             {
                 RowDefinitions = {
@@ -62,9 +73,11 @@ namespace XamarinIoTWorkshop
             grid.Children.Add(_deviceConnectionStringEditor, 0, 1);
             grid.Children.Add(isSendDataToAzureEnabledLabel, 0, 3);
             grid.Children.Add(_isSendDataToAzureEnabledSwitch, 0, 4);
+            grid.Children.Add(createdByLabel, 0, 4);
 
             Content = grid;
         }
+
 
         protected override void OnAppearing()
         {
@@ -73,6 +86,8 @@ namespace XamarinIoTWorkshop
             _deviceConnectionStringEditor.Text = IotHubSettings.DeviceConnectionString;
             _isSendDataToAzureEnabledSwitch.IsToggled = IotHubSettings.IsSendDataToAzureEnabled;
         }
+
+        void CreatedByLabelTapped() => DependencyService.Get<IDeepLinks>().OpenTwitter();
 
         void HandleIsSendDataToAzureEnabledSwitchToggled(object sender, ToggledEventArgs e) =>
             IotHubSettings.IsSendDataToAzureEnabled = _isSendDataToAzureEnabledSwitch.IsToggled;

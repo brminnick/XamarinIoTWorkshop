@@ -36,5 +36,9 @@
 	<string>Use the GPS Sensor</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Use the GPS Sensor</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitter</string>
+	</array>
 </dict>
 </plist>
