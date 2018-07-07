@@ -286,7 +286,25 @@ We will now install the iOS app from App Center. If you have an Android Device a
 
 <img alt="iOS Home Screen Installation" src="https://user-images.githubusercontent.com/13558917/42414398-693b41ec-81e9-11e8-8d27-b0d18764692c.PNG" width="200px">
 
+## 8. Connect App to IoT Central
 
+1. On your mobile device, launch the XamarinIoTWorkshop app
+2. In the XamarinIoTWorkshop app, tap the **Settings** tab
+
+<img alt="XamarinIoTWorkshop App, Accelerometer Page" src="https://user-images.githubusercontent.com/13558917/42414665-c45f520c-81ee-11e8-88a4-416d8499063f.png" width="200px">
+
+<img alt="XamarinIoTWorkshop App, Accelerometer Page" src="https://user-images.githubusercontent.com/13558917/42414666-c47590f8-81ee-11e8-910a-f7a9103fc150.png" width="200px">
+
+3. On **Settings** page, enter the **Primary Connection String** into the text box
+    - To avoid typos, I recommend emailing yourself the connection string, then copy/pasting the connection string into this text box
+4. On the **Settings** page, toggle the **Send Data to Azure** switch to **On**
+
+<img alt="XamarinIoTWorkshop App, Accelerometer Page" src="https://user-images.githubusercontent.com/13558917/42414667-c48b71f2-81ee-11e8-8872-25e4076a04d2.png" width="200px">
+
+5. Keep the app running in the foreground on your mobile device
+    - The app will only collect data and send it to IoT Central while it is running in the foreground
+
+## 9. View Data On IoT Central Dashboard
 
 # Resources
 
