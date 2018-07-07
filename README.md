@@ -11,13 +11,9 @@ This workshop will connect your mobile device to an [Azure IoT Hub](https://azur
 
 The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials/) to gather sensor data from the device's Accelerometer & Gyroscope, displays the data in the app using [Syncfusion's Circular Gauge control](https://www.syncfusion.com/products/xamarin/circular-gauge), and then sends the sensor data to the IoT Central Portal where we can view the data.
 
-## Xamarin App
-
-![Xamarin iOS App](https://user-images.githubusercontent.com/13558917/42401809-41173f26-812c-11e8-98f4-4703ccc062c3.gif)
-
-## IoT Central Dashboard
-
-![IoT Central Dashboard](https://user-images.githubusercontent.com/13558917/42401851-6ceeae54-812c-11e8-9296-b3ddbf5e8249.png)
+| Mobile App       | Sending Data to IoT Central Dashboard |
+:-------------------------|:-------------------------:
+![Xamarin iOS App](https://user-images.githubusercontent.com/13558917/42401809-41173f26-812c-11e8-98f4-4703ccc062c3.gif) | ![IoT Central Dashboard](https://user-images.githubusercontent.com/13558917/42401851-6ceeae54-812c-11e8-9296-b3ddbf5e8249.png)
 
 # Walkthrough
 
