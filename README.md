@@ -164,11 +164,16 @@ Apple does not allow users to download iOS apps that have not been previously re
 
 11. On the **Explorer** page, select **New** -> **Real**
 
-![IoT Centra, New Real Device](https://user-images.githubusercontent.com/13558917/42413954-6333f036-81e0-11e8-9014-c07a466c2db7.png)
+![IoT Central, New Real Device](https://user-images.githubusercontent.com/13558917/42413954-6333f036-81e0-11e8-9014-c07a466c2db7.png)
 
 ## 5. Add Measurements to IoT Central Device
 
 1. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+
+![IoT Central, New Measurement](https://user-images.githubusercontent.com/13558917/42414489-ed7153f6-81ea-11e8-8e30-587903a620fe.png)
+
+![IoT Central, Telemetry](https://user-images.githubusercontent.com/13558917/42414488-ed58e78a-81ea-11e8-895c-f8f60e04913c.png)
+
 2. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: AccelerometerX
     - **Field Name**: AccelerometerX
@@ -177,6 +182,8 @@ Apple does not allow users to download iOS apps that have not been previously re
     - **Maximium Value**: 1
     - **Decimal Places**: 5
 3. In the **Create Telemetry** pane, select **Save**
+
+![IoT Central, AccelerometerX](https://user-images.githubusercontent.com/13558917/42414487-ed4355c8-81ea-11e8-8eb0-9033961de83c.png)
 
 4. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
 5. In the **Create Telemetry** pane, enter the following information:
@@ -188,6 +195,8 @@ Apple does not allow users to download iOS apps that have not been previously re
     - **Decimal Places**: 5
 6. In the **Create Telemetry** pane, select **Save**
 
+![IoT Central, AccelerometerY](https://user-images.githubusercontent.com/13558917/42414511-47cc8294-81eb-11e8-97e3-224f625f9cc4.png)
+
 7. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
 8. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: AccelerometerZ
@@ -197,6 +206,8 @@ Apple does not allow users to download iOS apps that have not been previously re
     - **Maximium Value**: 10
     - **Decimal Places**: 5
 9. In the **Create Telemetry** pane, select **Save**
+
+![IoT Central, AccelerometerZ](https://user-images.githubusercontent.com/13558917/42414484-ed1517b2-81ea-11e8-923f-2711b1c20830.png)
 
 10. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
 11. In the **Create Telemetry** pane, enter the following information:
@@ -208,6 +219,8 @@ Apple does not allow users to download iOS apps that have not been previously re
     - **Decimal Places**: 5
 12. In the **Create Telemetry** pane, select **Save**
 
+![IoT Central, GyroscopeX](https://user-images.githubusercontent.com/13558917/42414483-ecfeaf18-81ea-11e8-99dc-6a0faf3cab79.png)
+
 13. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
 14. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: GyroscopeY
@@ -218,6 +231,8 @@ Apple does not allow users to download iOS apps that have not been previously re
     - **Decimal Places**: 5
 15. In the **Create Telemetry** pane, select **Save**
 
+![IoT Central, GyroscopeY](https://user-images.githubusercontent.com/13558917/42414482-ece9b2ca-81ea-11e8-810a-044894100872.png)
+
 16. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
 17. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: GyroscopeZ
@@ -227,6 +242,8 @@ Apple does not allow users to download iOS apps that have not been previously re
     - **Maximium Value**: 5
     - **Decimal Places**: 5
 18. In the **Create Telemetry** pane, select **Save**
+
+![IoT Central, GyroscopeZ](https://user-images.githubusercontent.com/13558917/42414481-ecd293d8-81ea-11e8-81a9-5d162b25ef90.png)
 
 ## 6. Install iOS App (iOS only)
 
