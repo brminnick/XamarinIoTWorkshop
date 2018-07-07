@@ -218,6 +218,40 @@ Apple does not allow users to download iOS apps that have not been previously re
     - **Decimal Places**: 5
 15. In the **Create Telemetry** pane, select **Save**
 
+16. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+17. In the **Create Telemetry** pane, enter the following information:
+    - **Display Name**: GyroscopeZ
+    - **Field Name**: GyroscopeZ
+    - **Units**: [Leave Blank]
+    - **Minimum Value**: -5
+    - **Maximium Value**: 5
+    - **Decimal Places**: 5
+18. In the **Create Telemetry** pane, select **Save**
+
+## 6. Install iOS App (iOS only)
+
+We will now install the iOS app from App Center. If you have an Android Device and have already installed the Android app, skip to **Step 7**.
+
+1. On your iOS device, open Safari
+2. In Safari on your iOS device, navigate to the App Center installation page:[https://install.appcenter.ms](https://install.appcenter.ms)
+3. On the installation page, if prompted, sign in
+4. On the installation page in Safari, tap on **Xamarin IoT Workshop, iOS**
+
+<img alt="Xamarin IoT Workshop, iOS" src="https://user-images.githubusercontent.com/13558917/42399787-0bf6669e-8124-11e8-9e1c-fe9dcc7c01d5.PNG" width="200px">
+
+5. On the **Xamarin IoT Workshop, iOS** page, select **Install**
+
+<img alt="iOS Installation Page" src="https://user-images.githubusercontent.com/13558917/42414397-65a0babc-81e9-11e8-8a14-a47aaad93aa8.png" width="200px">
+
+6. On the confirmation popup, select **Install**
+
+<img alt="iOS Installation Confirmation" src="https://user-images.githubusercontent.com/13558917/42414396-65878768-81e9-11e8-8438-2f5050f8b5e9.png" width="200px">
+
+7. On the iOS device, navigate to the iOS Home Screen
+8. On the iOS Home Screen, confirm that the app is installing
+
+<img alt="iOS Home Screen Installation" src="https://user-images.githubusercontent.com/13558917/42414398-693b41ec-81e9-11e8-8d27-b0d18764692c.PNG" width="200px">
+
 # Resources
 
 - [App Center](https://appcenter.ms)
