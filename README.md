@@ -48,39 +48,40 @@ If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 2. In Chrome on your Android device, navigate to the App Center installation page: [https://install.appcenter.ms](https://install.appcenter.ms)
 3. On the installation page, if prompted, sign in
 
-![App Center Install Sign In Page](https://user-images.githubusercontent.com/13558917/42402802-ec844b24-8131-11e8-8f5a-affb75895f0b.png =200x)
+<img alt="App Center Installation Page" src="https://user-images.githubusercontent.com/13558917/42402802-ec844b24-8131-11e8-8f5a-affb75895f0b.png" width="200px">
 
 4. On the App Center Installation Page, scroll down and locate Xamarin IoT Workshop, Android
 5. On the App Center Installation Page, tap Xamarin IoT Workshop, Android
 
-![Android Install Xamarin IoT Workshop](https://user-images.githubusercontent.com/13558917/42402804-ecb23b88-8131-11e8-8e06-ced1bb30c6d6.png)
+<img alt="Android Install Xamarin IoT Workshop" src="https://user-images.githubusercontent.com/13558917/42402804-ecb23b88-8131-11e8-8e06-ced1bb30c6d6.png" width="200px">
 
 6. On the Android download page, select Download
 
-![Android Download](https://user-images.githubusercontent.com/13558917/42402790-dcba12c8-8131-11e8-9b94-2c83dcf5751c.png)
+<img alt="Android Download" src="https://user-images.githubusercontent.com/13558917/42402790-dcba12c8-8131-11e8-9b94-2c83dcf5751c.png" width="200px">
 
 7. On the **Downloading...** page, select **Download**
 
-![Android Downloading Page](https://user-images.githubusercontent.com/13558917/42402791-dcd78cd6-8131-11e8-99b3-c45a15da4846.png)
+<img alt="Android Downloading Page" src="https://user-images.githubusercontent.com/13558917/42402791-dcd78cd6-8131-11e8-99b3-c45a15da4846.png" width="200px">
 
 8. Stand by until the download has completed
 
-![Android Downloading](https://user-images.githubusercontent.com/13558917/42402792-dcf56ec2-8131-11e8-9906-31d689f6a5c2.png)
+<img alt="Android Downloading" src="https://user-images.githubusercontent.com/13558917/42402792-dcf56ec2-8131-11e8-9906-31d689f6a5c2.png" width="200px">
 
 9. After the download has completed, select **Open**
-![Android Download Completed](https://user-images.githubusercontent.com/13558917/42402808-ed20e876-8131-11e8-9527-e8539cfe4e75.png)
+
+<img alt="Android Download Completed" src="https://user-images.githubusercontent.com/13558917/42402808-ed20e876-8131-11e8-9527-e8539cfe4e75.png" width="200px">
 
 10. On the Android Install page, select **Install**
 
-![Android Install Page](https://user-images.githubusercontent.com/13558917/42402809-ed3a9ab4-8131-11e8-82f5-e3c41db7b03c.png)
+<img alt="Android Install Page" src="https://user-images.githubusercontent.com/13558917/42402809-ed3a9ab4-8131-11e8-82f5-e3c41db7b03c.png" width="200px">
 
 11. Standby until the app has finished installing
 
-![Android App Installing](https://user-images.githubusercontent.com/13558917/42402810-ed5b219e-8131-11e8-845f-e172c40d28de.png)
+<img alt="Android App Installing" src="https://user-images.githubusercontent.com/13558917/42402810-ed5b219e-8131-11e8-845f-e172c40d28de.png" width="200px">
 
 12. Once the installation has finished, select **OPEN**
 
-![Android Installation Finished](https://user-images.githubusercontent.com/13558917/42402811-ed7e4f84-8131-11e8-95f4-e77d67888754.png)
+<img alt="Android Installation Finished" src="https://user-images.githubusercontent.com/13558917/42402811-ed7e4f84-8131-11e8-95f4-e77d67888754.png" width="200px">
 
 ## 3b. Register Device (iOS)
 
@@ -93,31 +94,32 @@ Apple does not allow users to download iOS apps that have not been previously re
 3. On the installation page, if prompted, sign in
 4. Once signed-in, on the installation page, select **+ Add Device**
 
-![Add iOS Device](https://user-images.githubusercontent.com/13558917/42399795-0cbd3152-8124-11e8-857a-d7db238acc17.PNG)
+<img alt="Add iOS Device" src="https://user-images.githubusercontent.com/13558917/42399795-0cbd3152-8124-11e8-857a-d7db238acc17.PNG" width="200px">
 
 5. On the iOS prompt, select "Allow" which will open the **Settings** app
 
-![iOS Prompt](https://user-images.githubusercontent.com/13558917/42399794-0c95e9ee-8124-11e8-88bf-aaa2634ffe77.PNG)
+<img alt="iOS Prompt" src="https://user-images.githubusercontent.com/13558917/42399794-0c95e9ee-8124-11e8-88bf-aaa2634ffe77.PNG" width="200px">
 
 6. In the Settings app, select **Install**
 
-![Install Profile](https://user-images.githubusercontent.com/13558917/42399793-0c7ae32e-8124-11e8-87f1-3c12d29cfd5f.PNG)
+<img alt="Install Profile" src="https://user-images.githubusercontent.com/13558917/42399793-0c7ae32e-8124-11e8-87f1-3c12d29cfd5f.PNG" width="200px">
+
 7. If prompted, enter your device's lock-screen passcode
 
-![Lock Screen Passcode](https://user-images.githubusercontent.com/13558917/42399791-0c63d6c0-8124-11e8-87d7-ecf964c5b955.PNG)
+<img alt="Lock Screen Passcode" src="https://user-images.githubusercontent.com/13558917/42399791-0c63d6c0-8124-11e8-87d7-ecf964c5b955.PNG" width="200px">
 
 8. On the popup confirmation, select **Install**
 
-![Popup dialog](https://user-images.githubusercontent.com/13558917/42399790-0c33a5fe-8124-11e8-8da9-912b31aa7007.PNG)
+<img alt="Popup dialog" src="https://user-images.githubusercontent.com/13558917/42399790-0c33a5fe-8124-11e8-8da9-912b31aa7007.PNG" width="200px">
 
 9. Once the installation has completed, the device will return you back to the install page in Safari
 10. On the installation page in Safari, tap on **Xamarin IoT Workshop, iOS**
 
-![Xamarin IoT Workshop, iOS](https://user-images.githubusercontent.com/13558917/42399787-0bf6669e-8124-11e8-9e1c-fe9dcc7c01d5.PNG)
+<img alt="Xamarin IoT Workshop, iOS" src="https://user-images.githubusercontent.com/13558917/42399787-0bf6669e-8124-11e8-9e1c-fe9dcc7c01d5.PNG" width="200px">
 
 11. On the installation page, confirm that it says **No releases for app**. Once I've added you to the app's Provisioning Profile, iOS will allow you the download the app here.
 
-![No releases for app](https://user-images.githubusercontent.com/13558917/42399786-0bd82986-8124-11e8-8320-66384fbfb5a5.PNG)
+<img alt="No releases for app" src="https://user-images.githubusercontent.com/13558917/42399786-0bd82986-8124-11e8-8320-66384fbfb5a5.PNG" width="200px">
 
 ## 4. Create IoT Central Device
 
