@@ -95,6 +95,7 @@ Apple does not allow users to download iOS apps that have not been previously re
 2. If requested, sign in with your Microsoft account
     - You can use any Microsoft-connected account, e.g. Azure account, Live account, Hotmail account (does anyone still use Hotmail?)
     - If you do not have a Microsoft-connected, create one!
+    //Continue this using the brandon.r.minnick@gmail.com email address
 
 # Resources
 - [App Center](https://appcenter.ms)
