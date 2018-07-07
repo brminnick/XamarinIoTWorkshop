@@ -50,10 +50,10 @@ If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 5. On the App Center Installation Page, tap Xamarin IoT Workshop, Android
 ![Android Install Xamarin IoT Workshop](https://user-images.githubusercontent.com/13558917/42402804-ecb23b88-8131-11e8-8e06-ced1bb30c6d6.png)
 6. On the Android download page, select Download
-[Android Download](https://user-images.githubusercontent.com/13558917/42402790-dcba12c8-8131-11e8-9b94-2c83dcf5751c.png)
+![Android Download](https://user-images.githubusercontent.com/13558917/42402790-dcba12c8-8131-11e8-9b94-2c83dcf5751c.png)
 7. On the ** Downloading...** page, select **Download**
 ![Android Downloading Page](https://user-images.githubusercontent.com/13558917/42402791-dcd78cd6-8131-11e8-99b3-c45a15da4846.png)
-8. Stand by until the download has compelted
+8. Stand by until the download has completed
 ![Android Downloading](https://user-images.githubusercontent.com/13558917/42402792-dcf56ec2-8131-11e8-9906-31d689f6a5c2.png)
 9. After the download has completed, select **Open**
 ![Android Download Completed](https://user-images.githubusercontent.com/13558917/42402808-ed20e876-8131-11e8-9527-e8539cfe4e75.png)
