@@ -89,7 +89,12 @@ Apple does not allow users to download iOS apps that have not been previously re
 11. On the installation page, confirm that it says **No releases for app**. Once I've added you to the app's Provisioning Profile, iOS will allow you the download the app here.
 ![No releases for app](https://user-images.githubusercontent.com/13558917/42399786-0bd82986-8124-11e8-8320-66384fbfb5a5.PNG)
 
+## 4. Create IoT Central Dashboard
 
+1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com/) 
+2. If requested, sign in with your Microsoft account
+    - You can use any Microsoft-connected account, e.g. Azure account, Live account, Hotmail account (does anyone still use Hotmail?)
+    - If you do not have a Microsoft-connected, create one!
 
 # Resources
 - [App Center](https://appcenter.ms)
