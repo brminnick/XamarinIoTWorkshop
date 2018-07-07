@@ -1,7 +1,7 @@
 # Xamarin IoT Workshop
 
 |CI Tool                    |Build Status|
-|---------------------------|---| 
+|---------------------------|---|
 | App Center, iOS | [![Build status](https://build.appcenter.ms/v0.1/apps/186c8afc-b757-4b79-aca3-3fe0711b7f64/branches/master/badge)](https://appcenter.ms) |
 | App Center, Android | [![Build status](https://build.appcenter.ms/v0.1/apps/e149e8f1-80de-4084-953b-83a482e5abd8/branches/master/badge)](https://appcenter.ms) |
 
@@ -96,13 +96,52 @@ Apple does not allow users to download iOS apps that have not been previously re
 11. On the installation page, confirm that it says **No releases for app**. Once I've added you to the app's Provisioning Profile, iOS will allow you the download the app here.
 ![No releases for app](https://user-images.githubusercontent.com/13558917/42399786-0bd82986-8124-11e8-8320-66384fbfb5a5.PNG)
 
-## 4. Create IoT Central Dashboard
+## 4. Create IoT Central Device
 
-1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com/) 
+1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com/)
 2. If requested, sign in with your Microsoft account
     - You can use any Microsoft-connected account, e.g. Azure account, Live account, Hotmail account (does anyone still use Hotmail?)
     - If you do not have a Microsoft-connected, create one!
-    //Continue this using the brandon.r.minnick@gmail.com email address
+3. On the Azure IoT Central Portal, select **New Application**
+
+![IoT Central, New Application](https://user-images.githubusercontent.com/13558917/42413959-63a4ed0e-81e0-11e8-9343-6b3cbc987a8a.png)
+
+4. On the Create Application page, make the following selections:
+    - **Choose payment plan**: Free
+    - **Select an appliation template**: Custom Application
+    - **Application Name**: Xamarin IoT Workshop [Last Name]
+        -Note: Replace "[Last Name]" with your last name to create a unique Application Name
+    - **Url**: xamarin-iot-workshop-[Last Name]
+         -Note: Replace "[Last Name]" with your last name to create a unique Url
+
+5. On the Create Application page, select **Create**
+
+![IoT Central, Create Application](https://user-images.githubusercontent.com/13558917/42413957-6377635c-81e0-11e8-9eac-1dcf04527600.png)
+
+6. On the Homepage screen, select **Create Device Templates**
+
+![IoT Central, Create Device Templates](https://user-images.githubusercontent.com/13558917/42413958-638d2e76-81e0-11e8-808a-ac0707dcfea8.png)
+
+7. On the **New device template** page, enter "Mobile Device"
+8. On the **New device template** page, select **Create**
+
+![IoT Central, New device template](https://user-images.githubusercontent.com/13558917/42414015-7ceccfb0-81e1-11e8-8866-bbde4ad17e06.png)
+
+9. On the **Mobile Device 1** page, select "Delete"
+    - **Mobile Device 1** is a simulated device created by Azure IoT Central
+    - We are deleting the simulated device and connecting a real device
+
+![IoT Central, Delete Simulated Device](https://user-images.githubusercontent.com/13558917/42413956-6362175e-81e0-11e8-8965-d7a2943678d5.png)
+
+10. On the confirmation popup, select **Delete**
+
+![IoT Central, Confirm Delete](https://user-images.githubusercontent.com/13558917/42414016-7d032f9e-81e1-11e8-83e5-535935fcc2c4.png)
+
+11. On the **Explorer** page, select **New** -> **Real**
+
+![IoT Centra, New Real Device](https://user-images.githubusercontent.com/13558917/42413954-6333f036-81e0-11e8-9014-c07a466c2db7.png)
+
+## 5. Add Measurements to IoT Central Device
 
 # Resources
 
