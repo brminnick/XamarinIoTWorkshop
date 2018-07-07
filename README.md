@@ -11,7 +11,7 @@ This workshop will connect your mobile device to an [Azure IoT Hub](https://azur
 
 The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials/) to gather sensor data from the device's Accelerometer & Gyroscope, displays the data in the app using [Syncfusion's Circular Gauge control](https://www.syncfusion.com/products/xamarin/circular-gauge), and then sends the sensor data to the IoT Central Portal where we can view the data.
 
-| Mobile App       | Sending Data to IoT Central Dashboard |
+| Mobile App              | Sending Data to IoT Central Dashboard |
 :-------------------------|:-------------------------:
 ![Xamarin iOS App](https://user-images.githubusercontent.com/13558917/42401809-41173f26-812c-11e8-98f4-4703ccc062c3.gif) | ![IoT Central Dashboard](https://user-images.githubusercontent.com/13558917/42401851-6ceeae54-812c-11e8-9296-b3ddbf5e8249.png)
 
@@ -48,7 +48,7 @@ If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 2. In Chrome on your Android device, navigate to the App Center installation page: [https://install.appcenter.ms](https://install.appcenter.ms)
 3. On the installation page, if prompted, sign in
 
-![App Center Install Sign In Page](https://user-images.githubusercontent.com/13558917/42402802-ec844b24-8131-11e8-8f5a-affb75895f0b.png)
+<img src="https://user-images.githubusercontent.com/13558917/42402802-ec844b24-8131-11e8-8f5a-affb75895f0b.png" width = "100>
 
 4. On the App Center Installation Page, scroll down and locate Xamarin IoT Workshop, Android
 5. On the App Center Installation Page, tap Xamarin IoT Workshop, Android
@@ -165,6 +165,8 @@ Apple does not allow users to download iOS apps that have not been previously re
 ![IoT Centra, New Real Device](https://user-images.githubusercontent.com/13558917/42413954-6333f036-81e0-11e8-9014-c07a466c2db7.png)
 
 ## 5. Add Measurements to IoT Central Device
+
+1. On the **Mobile Device** page, select 
 
 # Resources
 
