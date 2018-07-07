@@ -168,7 +168,55 @@ Apple does not allow users to download iOS apps that have not been previously re
 
 ## 5. Add Measurements to IoT Central Device
 
-1. On the **Mobile Device** page, select 
+1. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+2. In the **Create Telemetry** pane, enter the following information:
+    - **Display Name**: AccelerometerX
+    - **Field Name**: AccelerometerX
+    - **Units**: [Leave Blank]
+    - **Minimum Value**: -1
+    - **Maximium Value**: 1
+    - **Decimal Places**: 5
+3. In the **Create Telemetry** pane, select **Save**
+
+4. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+5. In the **Create Telemetry** pane, enter the following information:
+    - **Display Name**: AccelerometerY
+    - **Field Name**: AccelerometerY
+    - **Units**: [Leave Blank]
+    - **Minimum Value**: -1
+    - **Maximium Value**: 1
+    - **Decimal Places**: 5
+6. In the **Create Telemetry** pane, select **Save**
+
+7. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+8. In the **Create Telemetry** pane, enter the following information:
+    - **Display Name**: AccelerometerZ
+    - **Field Name**: AccelerometerZ
+    - **Units**: [Leave Blank]
+    - **Minimum Value**: -10
+    - **Maximium Value**: 10
+    - **Decimal Places**: 5
+9. In the **Create Telemetry** pane, select **Save**
+
+10. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+11. In the **Create Telemetry** pane, enter the following information:
+    - **Display Name**: GyroscopeX
+    - **Field Name**: GyroscopeX
+    - **Units**: [Leave Blank]
+    - **Minimum Value**: -1
+    - **Maximium Value**: 1
+    - **Decimal Places**: 5
+12. In the **Create Telemetry** pane, select **Save**
+
+13. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+14. In the **Create Telemetry** pane, enter the following information:
+    - **Display Name**: GyroscopeY
+    - **Field Name**: GyroscopeY
+    - **Units**: [Leave Blank]
+    - **Minimum Value**: -1
+    - **Maximium Value**: 1
+    - **Decimal Places**: 5
+15. In the **Create Telemetry** pane, select **Save**
 
 # Resources
 
