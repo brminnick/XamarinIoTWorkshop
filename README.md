@@ -48,7 +48,7 @@ If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 2. In Chrome on your Android device, navigate to the App Center installation page: [https://install.appcenter.ms](https://install.appcenter.ms)
 3. On the installation page, if prompted, sign in
 
-<img src="https://user-images.githubusercontent.com/13558917/42402802-ec844b24-8131-11e8-8f5a-affb75895f0b.png" width = "100>
+![App Center Install Sign In Page](https://user-images.githubusercontent.com/13558917/42402802-ec844b24-8131-11e8-8f5a-affb75895f0b.png =200x)
 
 4. On the App Center Installation Page, scroll down and locate Xamarin IoT Workshop, Android
 5. On the App Center Installation Page, tap Xamarin IoT Workshop, Android
