@@ -168,86 +168,103 @@ Apple does not allow users to download iOS apps that have not been previously re
 
 ## 5. Add Measurements to IoT Central Device
 
-1. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com/)
+2. If requested, sign in with your Microsoft account
+3. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
 
 ![IoT Central, New Measurement](https://user-images.githubusercontent.com/13558917/42414489-ed7153f6-81ea-11e8-8e30-587903a620fe.png)
 
 ![IoT Central, Telemetry](https://user-images.githubusercontent.com/13558917/42414488-ed58e78a-81ea-11e8-895c-f8f60e04913c.png)
 
-2. In the **Create Telemetry** pane, enter the following information:
+4. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: AccelerometerX
     - **Field Name**: AccelerometerX
     - **Units**: [Leave Blank]
     - **Minimum Value**: -1
     - **Maximium Value**: 1
     - **Decimal Places**: 5
-3. In the **Create Telemetry** pane, select **Save**
+5. In the **Create Telemetry** pane, select **Save**
 
 ![IoT Central, AccelerometerX](https://user-images.githubusercontent.com/13558917/42414487-ed4355c8-81ea-11e8-8eb0-9033961de83c.png)
 
-4. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
-5. In the **Create Telemetry** pane, enter the following information:
+6. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+7. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: AccelerometerY
     - **Field Name**: AccelerometerY
     - **Units**: [Leave Blank]
     - **Minimum Value**: -1
     - **Maximium Value**: 1
     - **Decimal Places**: 5
-6. In the **Create Telemetry** pane, select **Save**
+8. In the **Create Telemetry** pane, select **Save**
 
 ![IoT Central, AccelerometerY](https://user-images.githubusercontent.com/13558917/42414511-47cc8294-81eb-11e8-97e3-224f625f9cc4.png)
 
-7. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
-8. In the **Create Telemetry** pane, enter the following information:
+9. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+10. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: AccelerometerZ
     - **Field Name**: AccelerometerZ
     - **Units**: [Leave Blank]
     - **Minimum Value**: -10
     - **Maximium Value**: 10
     - **Decimal Places**: 5
-9. In the **Create Telemetry** pane, select **Save**
+11. In the **Create Telemetry** pane, select **Save**
 
 ![IoT Central, AccelerometerZ](https://user-images.githubusercontent.com/13558917/42414484-ed1517b2-81ea-11e8-923f-2711b1c20830.png)
 
-10. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
-11. In the **Create Telemetry** pane, enter the following information:
+12. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+13. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: GyroscopeX
     - **Field Name**: GyroscopeX
     - **Units**: [Leave Blank]
     - **Minimum Value**: -1
     - **Maximium Value**: 1
     - **Decimal Places**: 5
-12. In the **Create Telemetry** pane, select **Save**
+14. In the **Create Telemetry** pane, select **Save**
 
 ![IoT Central, GyroscopeX](https://user-images.githubusercontent.com/13558917/42414483-ecfeaf18-81ea-11e8-99dc-6a0faf3cab79.png)
 
-13. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
-14. In the **Create Telemetry** pane, enter the following information:
+15. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+16. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: GyroscopeY
     - **Field Name**: GyroscopeY
     - **Units**: [Leave Blank]
     - **Minimum Value**: -1
     - **Maximium Value**: 1
     - **Decimal Places**: 5
-15. In the **Create Telemetry** pane, select **Save**
+17. In the **Create Telemetry** pane, select **Save**
 
 ![IoT Central, GyroscopeY](https://user-images.githubusercontent.com/13558917/42414482-ece9b2ca-81ea-11e8-810a-044894100872.png)
 
-16. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
-17. In the **Create Telemetry** pane, enter the following information:
+18. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
+19. In the **Create Telemetry** pane, enter the following information:
     - **Display Name**: GyroscopeZ
     - **Field Name**: GyroscopeZ
     - **Units**: [Leave Blank]
     - **Minimum Value**: -5
     - **Maximium Value**: 5
     - **Decimal Places**: 5
-18. In the **Create Telemetry** pane, select **Save**
+20. In the **Create Telemetry** pane, select **Save**
 
 ![IoT Central, GyroscopeZ](https://user-images.githubusercontent.com/13558917/42414481-ecd293d8-81ea-11e8-81a9-5d162b25ef90.png)
 
-## 6. Install iOS App (iOS only)
+## 6. Get Device Connection String
 
-We will now install the iOS app from App Center. If you have an Android Device and have already installed the Android app, skip to **Step 7**.
+1. In **IoT Central** on the **Mobile Device** page, select **Connect this device**
+
+![Iot Central, Connect This Device](https://user-images.githubusercontent.com/13558917/42414606-339e1588-81ed-11e8-9c75-106a2238c092.png)
+
+2. In the **Connect this device** popup, select the **Copy** button adjacent to **Primary connection string**
+
+![IoT Central, Copy Primary Connection String](https://user-images.githubusercontent.com/13558917/42414605-3385ca0a-81ed-11e8-8f97-3e43d86134dd.png)
+
+3. On your computer, open a text editor, e.g. Notepad, TextEdit, Visual Studio Code, etc.
+4. In the text editor, paste the **Primary connection string** value
+
+![Primary Connection String](https://user-images.githubusercontent.com/13558917/42414604-336c6164-81ed-11e8-8dc4-575e100d253c.png)
+
+## 7. Install iOS App (iOS only)
+
+We will now install the iOS app from App Center. If you have an Android Device and have already installed the Android app, skip to **Step 8**.
 
 1. On your iOS device, open Safari
 2. In Safari on your iOS device, navigate to the App Center installation page:[https://install.appcenter.ms](https://install.appcenter.ms)
@@ -268,6 +285,8 @@ We will now install the iOS app from App Center. If you have an Android Device a
 8. On the iOS Home Screen, confirm that the app is installing
 
 <img alt="iOS Home Screen Installation" src="https://user-images.githubusercontent.com/13558917/42414398-693b41ec-81e9-11e8-8d27-b0d18764692c.PNG" width="200px">
+
+
 
 # Resources
 
