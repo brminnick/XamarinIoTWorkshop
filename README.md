@@ -96,19 +96,22 @@ If you have an Android Device, continue to step **4**.
 Apple does not allow users to download iOS apps that have not been previously registered. In this step, we will register for the iOS app, then download it later in the workshop after each device has been added to the app's provisioning profile.
 
 1. On your iOS device, open Safari
-2. In Safari on your iOS device, navigate to the App Center installation page:[https://install.appcenter.ms](https://install.appcenter.ms)
+2. In Safari on your iOS device, navigate to the App Center installation page: [https://install.appcenter.ms](https://install.appcenter.ms)
 3. On the installation page, if prompted, sign in
+
+<img alt="App Center Login" src="https://user-images.githubusercontent.com/13558917/42534696-3d73637c-8442-11e8-8bf4-642f0a83aa69.PNG" width="200px">
+
 4. Once signed-in, on the installation page, select **+ Add Device**
 
-<img alt="Add iOS Device" src="https://user-images.githubusercontent.com/13558917/42399795-0cbd3152-8124-11e8-857a-d7db238acc17.PNG" width="200px">
+<img alt="Add iOS Device" src="https://user-images.githubusercontent.com/13558917/42534700-3dd15450-8442-11e8-80a9-cad32e3f7d43.png" width="200px">
 
-5. On the iOS prompt, select "Allow" which will open the **Settings** app
+5. On the iOS prompt, select **Allow** which will open the Settings app on iOS
 
-<img alt="iOS Prompt" src="https://user-images.githubusercontent.com/13558917/42399794-0c95e9ee-8124-11e8-88bf-aaa2634ffe77.PNG" width="200px">
+<img alt="iOS Prompt" src="https://user-images.githubusercontent.com/13558917/42534699-3dbb2fcc-8442-11e8-8216-83cde3c14812.png" width="200px">
 
 6. In the Settings app, select **Install**
 
-<img alt="Install Profile" src="https://user-images.githubusercontent.com/13558917/42399793-0c7ae32e-8124-11e8-87f1-3c12d29cfd5f.PNG" width="200px">
+<img alt="Install Profile" src="https://user-images.githubusercontent.com/13558917/42534698-3da36de2-8442-11e8-89f0-c9d6964240a2.png" width="200px">
 
 7. If prompted, enter your device's lock-screen passcode
 
@@ -116,12 +119,12 @@ Apple does not allow users to download iOS apps that have not been previously re
 
 8. On the popup confirmation, select **Install**
 
-<img alt="Popup dialog" src="https://user-images.githubusercontent.com/13558917/42399790-0c33a5fe-8124-11e8-8da9-912b31aa7007.PNG" width="200px">
+<img alt="Popup dialog" src="https://user-images.githubusercontent.com/13558917/42534697-3d8a9862-8442-11e8-9524-a8c2149d1f02.png" width="200px">
 
-9. Once the installation has completed, the device will return you back to the install page in Safari
+9. Once the installation has completed, the device will return you back to the App Center Install page in Safari
 10. On the installation page in Safari, tap on **Xamarin IoT Workshop, iOS**
 
-<img alt="Xamarin IoT Workshop, iOS" src="https://user-images.githubusercontent.com/13558917/42399787-0bf6669e-8124-11e8-9e1c-fe9dcc7c01d5.PNG" width="200px">
+<img alt="Xamarin IoT Workshop, iOS" src="https://user-images.githubusercontent.com/13558917/42534694-3d5bff02-8442-11e8-8f7f-111c0fdac6d1.png" width="200px">
 
 11. On the installation page, confirm that it says **No releases for app**. Once I've added you to the app's Provisioning Profile, iOS will allow you the download the app here.
 
