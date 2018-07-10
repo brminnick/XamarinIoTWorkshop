@@ -35,6 +35,8 @@ namespace XamarinIoTWorkshop
                 catch (Exception e)
                 {
                     OnGeolocationFailed(e);
+                    AppCenterService.Report(e);
+
                     tcs.SetException(e);
                 }
             });

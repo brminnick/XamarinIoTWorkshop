@@ -81,18 +81,25 @@ namespace XamarinIoTWorkshop
             DataCollectionButtonText = BeginDataCollectionText;
         }
 
-        protected void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType) =>
+        protected void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType)
+        {
+            AppCenterService.TrackEvent("Feature Not Supported Exception Thrown", "Type", xamarinEssentialsType.Name);
             FeatureNotSupportedExceptionThrown?.Invoke(this, xamarinEssentialsType);
+        }
 
         void ExecuteDataCollectionButtonCommand()
         {
             if (DataCollectionButtonText.Equals(BeginDataCollectionText))
             {
+                AppCenterService.TrackEvent("Data Collection Button Tapped", "Button Text", BeginDataCollectionText);
+
                 StartDataCollection();
                 DataCollectionButtonText = EndDataCollectionText;
             }
             else
             {
+                AppCenterService.TrackEvent("Data Collection Button Tapped", "Button Text", EndDataCollectionText);
+
                 StopDataCollection();
                 DataCollectionButtonText = BeginDataCollectionText;
             }
@@ -100,7 +107,11 @@ namespace XamarinIoTWorkshop
 
         void OnPropertyChanged([CallerMemberName]string name = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-        void OnDataCollectionStatusChanged(bool isCollectingData) => DataCollectionStatusChanged?.Invoke(this, isCollectingData);
+        void OnDataCollectionStatusChanged(bool isCollectingData)
+        {
+            AppCenterService.TrackEvent("Data Collection Changed", "IsEnabled", isCollectingData.ToString());
+            DataCollectionStatusChanged?.Invoke(this, isCollectingData);
+        }
         #endregion
     }
 }

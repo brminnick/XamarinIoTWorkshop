@@ -12,6 +12,8 @@ namespace XamarinIoTWorkshop.iOS
         {
             SyncfusionServices.InitializeSyncfusion();
 
+            Microsoft.AppCenter.Distribute.Distribute.DontCheckForUpdatesInDebug();
+
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.FormsMaps.Init(); 
 

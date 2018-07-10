@@ -70,8 +70,10 @@ namespace XamarinIoTWorkshop
 
                     await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    AppCenterService.Report(e);
+
                     StopDataCollection();
                     DataCollectionButtonText = BeginDataCollectionText;
                 }
