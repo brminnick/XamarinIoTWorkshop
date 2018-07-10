@@ -30,9 +30,9 @@ We will use [App Center](https://appcenter.ms/?WT.mc_id=XamarinIoTWorkshop-githu
 
 Each attendee will need to register
 
-1. [Send me an email](mailto:brandon.minnick@microsoft.com?subject=Xamarin%20IoT%20Workshop%20App%20Center%20Registration)
+1. [Send me an email](mailto:brandon.minnick@microsoft.com?subject=Xamarin%20IoT%20Workshop%20App%20Center%20Registration%20Request)
     - To: Brandon.Minnick@Microsoft.com
-    - Subject: Xamarin IoT Workshop App Center Registration
+    - Subject: Xamarin IoT Workshop App Center Registration Request
     - Body: [Blank]
 2. Standby as I manually add each participant to the App Center distribution group
 3. Once I have registered you, you will receive an email from App Center
