@@ -318,6 +318,10 @@ We will now install the iOS app from App Center. If you have an Android Device a
 
 ## 9. View Data On IoT Central Dashboard
 
+As you rotate your phone, the guages in the app will update and the data will appear on the IoT Central Dashboard in near-realtime
+
+![IoT Central Dashboard](https://user-images.githubusercontent.com/13558917/42401851-6ceeae54-812c-11e8-9296-b3ddbf5e8249.png)
+
 # Resources
 
 - [App Center](https://appcenter.ms)
