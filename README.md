@@ -48,6 +48,8 @@ Each attendee will need to register
 
 If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 
+**Note**: The Download/Installation steps below may differ slightly for each Android device
+
 1. On your Android device, open Chrome
 2. In Chrome on your Android device, navigate to the App Center installation page: [https://install.appcenter.ms](https://install.appcenter.ms)
 3. On the installation page, if prompted, sign in
