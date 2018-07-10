@@ -57,15 +57,15 @@ If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 4. On the App Center Installation Page, scroll down and locate Xamarin IoT Workshop, Android
 5. On the App Center Installation Page, tap Xamarin IoT Workshop, Android
 
-<img alt="Android Install Xamarin IoT Workshop" src="https://user-images.githubusercontent.com/13558917/42402804-ecb23b88-8131-11e8-8e06-ced1bb30c6d6.png" width="200px">
+<img alt="Android Install Xamarin IoT Workshop" src="https://user-images.githubusercontent.com/13558917/42529781-3c53271a-8434-11e8-9024-c9b07f23422b.png" width="200px">
 
 6. On the Android download page, select Download
 
-<img alt="Android Download" src="https://user-images.githubusercontent.com/13558917/42402790-dcba12c8-8131-11e8-9b94-2c83dcf5751c.png" width="200px">
+<img alt="Android Download" src="https://user-images.githubusercontent.com/13558917/42529894-86e5f32a-8434-11e8-8124-555351675900.png" width="200px">
 
 7. On the **Downloading...** page, select **Download**
 
-<img alt="Android Downloading Page" src="https://user-images.githubusercontent.com/13558917/42402791-dcd78cd6-8131-11e8-99b3-c45a15da4846.png" width="200px">
+<img alt="Android Downloading Page" src="https://user-images.githubusercontent.com/13558917/42529984-ca730290-8434-11e8-9519-92c5ced6c926.png" width="200px">
 
 8. Stand by until the download has completed
 
@@ -77,7 +77,7 @@ If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 
 10. On the Android Install page, select **Install**
 
-<img alt="Android Install Page" src="https://user-images.githubusercontent.com/13558917/42402809-ed3a9ab4-8131-11e8-82f5-e3c41db7b03c.png" width="200px">
+<img alt="Android Install Page" src="https://user-images.githubusercontent.com/13558917/42530106-288223f2-8435-11e8-9209-b648f3991b49.png" width="200px">
 
 11. Standby until the app has finished installing
 
@@ -85,7 +85,7 @@ If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 
 12. Once the installation has finished, select **OPEN**
 
-<img alt="Android Installation Finished" src="https://user-images.githubusercontent.com/13558917/42402811-ed7e4f84-8131-11e8-95f4-e77d67888754.png" width="200px">
+<img alt="Android Installation Finished" src="https://user-images.githubusercontent.com/13558917/42530105-286af236-8435-11e8-9134-4d55785009c3.png" width="200px">
 
 ## 3b. Register Device (iOS)
 
