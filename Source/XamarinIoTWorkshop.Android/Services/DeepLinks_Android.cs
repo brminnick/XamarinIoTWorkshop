@@ -22,10 +22,12 @@ namespace XamarinIoTWorkshop.Droid
                 try
                 {
                     CurrentActivity.StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse(TwitterConstants.BrandonMinnickTwitterDeepLink)));
+                    AppCenterService.TrackEvent("Launched Twitter Profile", "Method", "Twitter App");
                 }
                 catch (ActivityNotFoundException)
                 {
                     OpenChromeCustomTabs(TwitterConstants.BrandonMinnickTwitterUrl);
+                    AppCenterService.TrackEvent("Launched Twitter Profile", "Method", "Android Custom Tabs");
                 }
             });
         }

@@ -34,10 +34,16 @@ namespace XamarinIoTWorkshop.iOS
             var visibleViewController = await GetVisibleViewController().ConfigureAwait(false);
 
             DispatchQueue.MainQueue.DispatchAsync(() => visibleViewController.PresentViewControllerAsync(safariViewController, true));
+
+            AppCenterService.TrackEvent("Launched Twitter Profile", "Method", "SFSafariViewController");
         }
 
-        void OpenLinkInApp(NSUrl url) =>
+        void OpenLinkInApp(NSUrl url)
+        {
             DispatchQueue.MainQueue.DispatchAsync(() => UIApplication.SharedApplication.OpenUrl(url, new UIApplicationOpenUrlOptions { SourceApplication = "com.minnick.XamarinIoTWorkshop" }, null));
+
+            AppCenterService.TrackEvent("Launched Twitter Profile", "Method", "Twitter App");
+        }
 
         static Task<UIViewController> GetVisibleViewController()
         {
