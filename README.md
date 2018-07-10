@@ -37,8 +37,12 @@ Each attendee will need to register
 2. Standby as I manually add each participant to the App Center distribution group
 3. Once I have registered you, you will receive an email from App Center
 4. In the email from App Center, tap **Accept Invitation**
+    - This will open a link in your browswer
 
-![App Center Invitation Email](https://user-images.githubusercontent.com/13558917/42404139-957c6f64-813b-11e8-8460-bf8ba956b7bc.png)
+![App Center Invitation Email](https://user-images.githubusercontent.com/13558917/42529614-d56fb1c6-8433-11e8-855a-d6e78256a7ad.png)
+
+5. In the browser page that opened automatically, tap **Accept Invitation**
+
 
 ## 3a. Download App (Android)
 
