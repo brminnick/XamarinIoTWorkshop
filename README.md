@@ -73,7 +73,7 @@ If you have an iOS Device, continue to step **3b. Register Device (iOS)**
 
 9. After the download has completed, select **Open**
 
-<img alt="Android Download Completed" src="https://user-images.githubusercontent.com/13558917/42402808-ed20e876-8131-11e8-9527-e8539cfe4e75.png" width="200px">
+<img alt="Android Download Completed" src="https://user-images.githubusercontent.com/13558917/42530233-7f0c2100-8435-11e8-9e45-507677dacb91.png" width="200px">
 
 10. On the Android Install page, select **Install**
 
