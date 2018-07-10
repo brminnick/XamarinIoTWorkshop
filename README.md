@@ -26,7 +26,7 @@ We will use [App Center](https://appcenter.ms/?WT.mc_id=XamarinIoTWorkshop-githu
 
 ![App Center Registration](https://user-images.githubusercontent.com/13558917/42402275-94801690-812e-11e8-8000-655b7f2f7ae7.png)
 
-## 2. Register for the Xamarin IoT Workshop Group in App Center
+## 2. Register for the App Center Group: Xamarin IoT Workshop 
 
 Each attendee will need to register
 
