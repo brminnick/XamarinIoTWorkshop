@@ -278,9 +278,12 @@ We will now install the iOS app from App Center. If you have an Android Device a
 1. On your iOS device, open Safari
 2. In Safari on your iOS device, navigate to the App Center installation page:[https://install.appcenter.ms](https://install.appcenter.ms)
 3. On the installation page, if prompted, sign in
+
+<img alt="App Center Installation Page" src="https://user-images.githubusercontent.com/13558917/42402802-ec844b24-8131-11e8-8f5a-affb75895f0b.png" width="200px">
+
 4. On the installation page in Safari, tap on **Xamarin IoT Workshop, iOS**
 
-<img alt="Xamarin IoT Workshop, iOS" src="https://user-images.githubusercontent.com/13558917/42399787-0bf6669e-8124-11e8-9e1c-fe9dcc7c01d5.PNG" width="200px">
+<img alt="Xamarin IoT Workshop, iOS" src="https://user-images.githubusercontent.com/13558917/42534694-3d5bff02-8442-11e8-8f7f-111c0fdac6d1.png" width="200px">
 
 5. On the **Xamarin IoT Workshop, iOS** page, select **Install**
 
