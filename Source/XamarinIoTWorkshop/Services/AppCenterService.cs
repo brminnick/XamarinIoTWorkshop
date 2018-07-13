@@ -6,7 +6,6 @@ using System.Runtime.CompilerServices;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Distribute;
 
 namespace XamarinIoTWorkshop
 {
@@ -57,6 +56,6 @@ namespace XamarinIoTWorkshop
         }
 
         static void Start(string appSecret) =>
-            AppCenter.Start(appSecret, typeof(Analytics), typeof(Crashes), typeof(Distribute));
+            AppCenter.Start(appSecret, typeof(Analytics), typeof(Crashes));
     }
 }
