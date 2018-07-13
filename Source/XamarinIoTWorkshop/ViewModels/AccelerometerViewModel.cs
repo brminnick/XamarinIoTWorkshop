@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+
 using Xamarin.Essentials;
 
 namespace XamarinIoTWorkshop
@@ -36,19 +37,23 @@ namespace XamarinIoTWorkshop
             }
         }
 
-        async void HandleAccelerometerReadingChanged(AccelerometerChangedEventArgs e)
+        protected override async Task SendIoTData()
         {
-            UpdateAxisValues(e.Reading.Acceleration);
-
-            var accelerometerData = new AccelerometerDataModel
+            if (IsDataCollectionActive)
             {
-                AccelerometerX = e.Reading.Acceleration.X,
-                AccelerometerY = e.Reading.Acceleration.Y,
-                AccelerometerZ = e.Reading.Acceleration.Z,
-            };
 
-            await IoTDeviceService.SendMessage(accelerometerData).ConfigureAwait(false);
+                var accelerometerData = new AccelerometerDataModel
+                {
+                    AccelerometerX = XAxisValue,
+                    AccelerometerY = YAxisValue,
+                    AccelerometerZ = ZAxisValue
+                };
+
+                await IoTDeviceService.SendMessage(accelerometerData).ConfigureAwait(false);
+            }
         }
+
+        void HandleAccelerometerReadingChanged(AccelerometerChangedEventArgs e) => UpdateAxisValues(e.Reading.Acceleration);
         #endregion
     }
 }

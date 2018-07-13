@@ -37,5 +37,6 @@
       <Compile Remove="Services\Base\BaseHttpClientService.cs" />
       <Compile Remove="ViewModels\SettingsViewModel.cs" />
       <Compile Remove="Services\AnalyticsHelpers.cs" />
+      <Compile Remove="Models\IDataModel.cs" />
     </ItemGroup>
 </Project>

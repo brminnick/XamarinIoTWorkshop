@@ -1,11 +1,16 @@
-﻿using System.Threading.Tasks;
-
+﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
 {
     public class GyroscopeViewModel : ThreeAxisViewModel
     {
+        #region Constructors
+        public GyroscopeViewModel() => Device.StartTimer(TimeSpan.FromSeconds(1), SendData);
+        #endregion
+
         #region Methods
         protected override void StartDataCollection()
         {
@@ -37,19 +42,24 @@ namespace XamarinIoTWorkshop
             }
         }
 
-        async void HandleGyroscopeReadingChanged(GyroscopeChangedEventArgs e)
+        void HandleGyroscopeReadingChanged(GyroscopeChangedEventArgs e) => UpdateAxisValues(e.Reading.AngularVelocity);
+
+        protected override async Task SendIoTData()
         {
-            UpdateAxisValues(e.Reading.AngularVelocity);
-
-            var gyroscopeData = new GyroscopeDataModel
+            if (IsDataCollectionActive)
             {
-                GyroscopeX = e.Reading.AngularVelocity.X,
-                GyroscopeY = e.Reading.AngularVelocity.Y,
-                GyroscopeZ = e.Reading.AngularVelocity.Z,
-            };
 
-            await IoTDeviceService.SendMessage(gyroscopeData).ConfigureAwait(false);
+                var accelerometerData = new GyroscopeDataModel
+                {
+                    GyroscopeX = XAxisValue,
+                    GyroscopeY = YAxisValue,
+                    GyroscopeZ = ZAxisValue
+                };
+
+                await IoTDeviceService.SendMessage(accelerometerData).ConfigureAwait(false);
+            }
         }
         #endregion
+
     }
 }
