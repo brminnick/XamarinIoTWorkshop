@@ -1,31 +1,29 @@
 #!/usr/bin/env bash
-if [ "$APPCENTER_XAMARIN_CONFIGURATION" == "Debug" ];then
+echo "Post Build Script Started"
 
-    echo "Post Build Script Started"
-    
-    SolutionFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name FaceOff.sln`
-    SolutionFileFolder=`dirname $SolutionFile`
+SolutionFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name XamarinIoTWorkshop.sln`
+SolutionFileFolder=`dirname $SolutionFile`
 
-    MSBuild=`find /Applications -name MSBuild | grep bin | head -1`
-    UITestProject=`find "$APPCENTER_SOURCE_DIRECTORY" -name FaceOff.UITests.csproj`
+UITestProject=`find "$APPCENTER_SOURCE_DIRECTORY" -name XamarinIoTWorkshop.UITests.csproj`
 
-    echo SolutionFile: $SolutionFile
-    echo SolutionFileFolder: $SolutionFileFolder
-    echo MSBuild: $MSBuild
-    echo UITestProject: $UITestProject
+echo SolutionFile: $SolutionFile
+echo SolutionFileFolder: $SolutionFileFolder
+echo UITestProject: $UITestProject
 
-    chmod -R 777 $SolutionFileFolder
+chmod -R 777 $SolutionFileFolder
 
-    msbuild "$UITestProject" /property:Configuration=$APPCENTER_XAMARIN_CONFIGURATION
+msbuild "$UITestProject" /property:Configuration=$APPCENTER_XAMARIN_CONFIGURATION
 
-    UITestDLL=`find "$APPCENTER_SOURCE_DIRECTORY" -name "FaceOff.UITests.dll" | grep bin`
-    UITestBuildDir=`dirname $UITestDLL`
+UITestDLL=`find "$APPCENTER_SOURCE_DIRECTORY" -name "XamarinIoTWorkshop.UITests.dll" | grep bin`
+UITestBuildDir=`dirname $UITestDLL`
 
-    APKFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.apk | head -1`
+IPAFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.ipa | head -1`
 
-    npm install -g appcenter-cli
+DSYMFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.dsym | head -1`
+DSYMDirectory=`dirname $DSYMFile`
 
-    appcenter login --token token
+npm install -g appcenter-cli
 
-    appcenter test run uitest --app "FaceOff/FaceOff-Android" --devices "FaceOff/android5-plus" --app-path $APKFile --test-series "master" --locale "en_US" --build-dir $UITestBuildDir --async
-fi
+appcenter login --token token
+
+appcenter test run uitest --app "Xamarin-IoT-Workshop/XamarinIoTWorkshop-Android" --devices "Xamarin-IoT-Workshop/all-android-os" --app-path $IPAFile --test-series "master" --locale "en_US" --build-dir $UITestBuildDir --dsym-dir $DSYMDirectory --async
