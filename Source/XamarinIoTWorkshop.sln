@@ -11,6 +11,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "XamarinIoTWorkshop.Shared",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinIoTWorkshop.UITests", "XamarinIoTWorkshop.UITests\XamarinIoTWorkshop.UITests.csproj", "{98C2BF85-A212-4B20-8851-C75D2DA6D909}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "XamarinIoTWorkshop.SyncFusion.Shared", "XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.shproj", "{DC48C3B7-BFAB-4454-A1BF-682FF67D3106}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

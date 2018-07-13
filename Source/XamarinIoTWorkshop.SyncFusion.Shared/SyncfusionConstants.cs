@@ -1,4 +1,4 @@
-﻿namespace XamarinIoTWorkshop
+﻿namespace XamarinIoTWorkshop.SyncFusion.Shared
 {
     public static class SyncfusionConstants
     {

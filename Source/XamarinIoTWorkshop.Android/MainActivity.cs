@@ -2,7 +2,7 @@
 using Android.OS;
 using Android.Runtime;
 
-using XamarinIoTWorkshop.Shared;
+using XamarinIoTWorkshop.SyncFusion.Shared;
 
 namespace XamarinIoTWorkshop.Droid
 {

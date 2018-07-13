@@ -3,12 +3,13 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>{BC697531-19EB-49FE-A2BC-D54DE8B1E293}</SharedGUID>
+    <SharedGUID>{DC48C3B7-BFAB-4454-A1BF-682FF67D3106}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>XamarinIoTWorkshop.Shared</Import_RootNamespace>
+    <Import_RootNamespace>XamarinIoTWorkshop.SyncFusion.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)ButtonTextConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SyncfusionConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SyncfusionServices.cs" />
   </ItemGroup>
 </Project>

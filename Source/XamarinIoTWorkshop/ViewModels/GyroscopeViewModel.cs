@@ -18,7 +18,7 @@ namespace XamarinIoTWorkshop
 
             try
             {
-                Gyroscope.Start(SensorSpeed.Fastest);
+                Gyroscope.Start(SensorSpeed.Normal);
                 Gyroscope.ReadingChanged += HandleGyroscopeReadingChanged;
             }
             catch (FeatureNotSupportedException)

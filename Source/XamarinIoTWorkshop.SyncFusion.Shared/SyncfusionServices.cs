@@ -1,4 +1,4 @@
-﻿namespace XamarinIoTWorkshop.Shared
+﻿namespace XamarinIoTWorkshop.SyncFusion.Shared
 {
     public static class SyncfusionServices
     {

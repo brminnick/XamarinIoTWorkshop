@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 
-using XamarinIoTWorkshop.Shared;
+using XamarinIoTWorkshop.SyncFusion.Shared;
 
 namespace XamarinIoTWorkshop.iOS
 {

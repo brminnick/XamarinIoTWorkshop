@@ -192,6 +192,7 @@
       <Version>3.1.0.637273</Version>
     </PackageReference>
   </ItemGroup>
+  <Import Project="..\XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.projitems" Label="Shared" Condition="Exists('..\XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\XamarinIoTWorkshop\XamarinIoTWorkshop.csproj">

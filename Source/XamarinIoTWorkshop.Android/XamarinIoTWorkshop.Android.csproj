@@ -195,5 +195,6 @@
       <Name>XamarinIoTWorkshop</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.projitems" Label="Shared" Condition="Exists('..\XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.projitems')" />
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
