@@ -6,18 +6,15 @@ using System.Windows.Input;
 
 using Xamarin.Forms;
 
+using XamarinIoTWorkshop.Shared;
+
 namespace XamarinIoTWorkshop
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        #region Constant Fields
-        protected const string BeginDataCollectionText = "Begin Data Collection";
-        protected const string EndDataCollectionText = "End Data Collection";
-        #endregion
-
         #region Fields
         bool _isDataCollectionActive;
-        string _dataCollectionButtonText = EndDataCollectionText;
+        string _dataCollectionButtonText = ButtonTextConstants.EndDataCollectionText;
         ICommand _dataCollectionButtonCommand;
         #endregion
 
@@ -78,7 +75,7 @@ namespace XamarinIoTWorkshop
         protected virtual void HandleIoTDeviceServiceFailed(object sender, string message)
         {
             StopDataCollection();
-            DataCollectionButtonText = BeginDataCollectionText;
+            DataCollectionButtonText = ButtonTextConstants.BeginDataCollectionText;
         }
 
         protected void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType)
@@ -89,19 +86,19 @@ namespace XamarinIoTWorkshop
 
         void ExecuteDataCollectionButtonCommand()
         {
-            if (DataCollectionButtonText.Equals(BeginDataCollectionText))
+            if (DataCollectionButtonText.Equals(ButtonTextConstants.BeginDataCollectionText))
             {
-                AppCenterService.TrackEvent("Data Collection Button Tapped", "Button Text", BeginDataCollectionText);
+                AppCenterService.TrackEvent("Data Collection Button Tapped", "Button Text", ButtonTextConstants.BeginDataCollectionText);
 
                 StartDataCollection();
-                DataCollectionButtonText = EndDataCollectionText;
+                DataCollectionButtonText = ButtonTextConstants.EndDataCollectionText;
             }
             else
             {
-                AppCenterService.TrackEvent("Data Collection Button Tapped", "Button Text", EndDataCollectionText);
+                AppCenterService.TrackEvent("Data Collection Button Tapped", "Button Text", ButtonTextConstants.EndDataCollectionText);
 
                 StopDataCollection();
-                DataCollectionButtonText = BeginDataCollectionText;
+                DataCollectionButtonText = ButtonTextConstants.BeginDataCollectionText;
             }
         }
 

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 using Xamarin.Essentials;
-using System.Windows.Input;
 using Xamarin.Forms;
+
+using XamarinIoTWorkshop.Shared;
 
 namespace XamarinIoTWorkshop
 {
@@ -75,7 +77,7 @@ namespace XamarinIoTWorkshop
                     AppCenterService.Report(e);
 
                     StopDataCollection();
-                    DataCollectionButtonText = BeginDataCollectionText;
+                    DataCollectionButtonText = ButtonTextConstants.BeginDataCollectionText;
                 }
 
             } while (IsDataCollectionActive);

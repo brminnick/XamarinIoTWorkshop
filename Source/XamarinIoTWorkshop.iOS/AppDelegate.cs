@@ -15,7 +15,11 @@ namespace XamarinIoTWorkshop.iOS
             Microsoft.AppCenter.Distribute.Distribute.DontCheckForUpdatesInDebug();
 
             global::Xamarin.Forms.Forms.Init();
-            global::Xamarin.FormsMaps.Init(); 
+            global::Xamarin.FormsMaps.Init();
+
+#if DEBUG
+            Xamarin.Calabash.Start();
+#endif
 
             LoadApplication(new App());
 

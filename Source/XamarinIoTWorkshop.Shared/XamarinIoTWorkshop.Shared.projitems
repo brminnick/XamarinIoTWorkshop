@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)SyncfusionServices.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SyncfusionConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ButtonTextConstants.cs" />
   </ItemGroup>
 </Project>
