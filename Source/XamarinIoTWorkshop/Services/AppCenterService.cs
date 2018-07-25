@@ -21,12 +21,10 @@ namespace XamarinIoTWorkshop
 
         public static void TrackEvent(string trackIdentifier, string key, string value)
         {
-            IDictionary<string, string> table = new Dictionary<string, string> { { key, value } };
-
             if (string.IsNullOrWhiteSpace(key) && string.IsNullOrWhiteSpace(value))
-                table = null;
-
-            TrackEvent(trackIdentifier, table);
+                TrackEvent(trackIdentifier);
+            else
+                TrackEvent(trackIdentifier, new Dictionary<string, string> { { key, value } });
         }
 
         public static void Report(Exception exception,
@@ -55,7 +53,6 @@ namespace XamarinIoTWorkshop
             Debug.WriteLine($"File Name: {fileName}");
         }
 
-        static void Start(string appSecret) =>
-            AppCenter.Start(appSecret, typeof(Analytics), typeof(Crashes));
+        static void Start(string appSecret) => AppCenter.Start(appSecret, typeof(Analytics), typeof(Crashes));
     }
 }

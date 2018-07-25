@@ -18,7 +18,7 @@ namespace XamarinIoTWorkshop
                 ForegroundColor = Color.Gray
             };
 
-            var circularGuageScale = new Scale
+            var circularGaugeScale = new Scale
             {
                 Interval = (endValue - startValue) / 10,
                 StartValue = startValue,
@@ -29,7 +29,7 @@ namespace XamarinIoTWorkshop
                 MinorTicksPerInterval = 4,
             };
 
-            Scales = new ObservableCollection<Scale> { circularGuageScale };
+            Scales = new ObservableCollection<Scale> { circularGaugeScale };
             Headers = new ObservableCollection<Header> { header };
         }
 

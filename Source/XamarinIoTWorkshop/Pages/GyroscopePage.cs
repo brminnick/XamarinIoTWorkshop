@@ -11,14 +11,14 @@ namespace XamarinIoTWorkshop
             Icon = "Gyroscope";
             Title = "Gyroscope";
 
-            var xCircularGuage = new CircularGaugeView("X-Axis", -1, 1);
-            xCircularGuage.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.XAxisValue));
+            var xCircularGauge = new CircularGaugeView("X-Axis", -1, 1);
+            xCircularGauge.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.XAxisValue));
 
-            var yCircularGuage = new CircularGaugeView("Y-Axis", -1, 1);
-            yCircularGuage.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.YAxisValue));
+            var yCircularGauge = new CircularGaugeView("Y-Axis", -1, 1);
+            yCircularGauge.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.YAxisValue));
 
-            var zCircularGuage = new CircularGaugeView("Z-Axis", -5, 5);
-            zCircularGuage.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.ZAxisValue));
+            var zCircularGauge = new CircularGaugeView("Z-Axis", -5, 5);
+            zCircularGauge.Pointer.SetBinding(Pointer.ValueProperty, nameof(ViewModel.ZAxisValue));
 
             var dataCollectionButton = new Button
             {
@@ -41,9 +41,9 @@ namespace XamarinIoTWorkshop
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) }
                 }
             };
-            grid.Children.Add(xCircularGuage, 0, 0);
-            grid.Children.Add(yCircularGuage, 0, 1);
-            grid.Children.Add(zCircularGuage, 0, 2);
+            grid.Children.Add(xCircularGauge, 0, 0);
+            grid.Children.Add(yCircularGauge, 0, 1);
+            grid.Children.Add(zCircularGauge, 0, 2);
             grid.Children.Add(dataCollectionButton, 0, 3);
 
             Content = grid;

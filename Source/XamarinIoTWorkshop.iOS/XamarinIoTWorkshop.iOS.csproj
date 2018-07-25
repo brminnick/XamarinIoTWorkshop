@@ -173,15 +173,6 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter">
-      <Version>1.7.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>1.7.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>1.7.0</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.TestCloud.Agent">
       <Version>0.21.5</Version>
     </PackageReference>
@@ -190,6 +181,15 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>3.1.0.637273</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter">
+      <Version>1.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter.Crashes">
+      <Version>1.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter.Analytics">
+      <Version>1.8.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.projitems" Label="Shared" Condition="Exists('..\XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.projitems')" />
