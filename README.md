@@ -19,7 +19,14 @@ The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials/
 
 ## 1. Install Xamarin App
 
-**Note:** If this is 
+**Note:** If this is workshop is being done in-person, led by Brandon Minnick, follow the [App Center Installation steps](./AppCenterInstallation.md).
+
+1. Clone/Download this git repo
+
+![Clone](https://user-images.githubusercontent.com/13558917/45580869-83982380-b8d9-11e8-8ed2-8415ac6480b3.png)
+
+2. After downloading/cloning the repo, locate `XamarinIoTWorkshop.sln`
+3. Launch `XamarinIoTWorkshop.sln` in [Visual Studio on PC](https://visualstudio.microsoft.com/vs/?WT.mc_id=XamarinIoTWorkshop-github-bramin) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?WT.mc_id=XamarinIoTWorkshop-github-bramin)
 
 ## 2. Create IoT Central Device
 
