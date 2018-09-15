@@ -26,10 +26,9 @@ Each attendee will need to register
 
 5. In the browser page that opened automatically, tap **Accept Invitation**
 
-
 ## 3a. Download App (Android)
 
-If you have an iOS Device, continue to step **3b. Register Device (iOS)**
+If you have an iOS Device, continue to step **3b. Download App (iOS)**
 
 **Note**: The Download/Installation steps below may differ slightly for each Android device
 
