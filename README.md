@@ -27,6 +27,7 @@ The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials/
 
 2. After downloading/cloning the repo, locate `XamarinIoTWorkshop.sln`
 3. Launch `XamarinIoTWorkshop.sln` in [Visual Studio on PC](https://visualstudio.microsoft.com/vs/?WT.mc_id=XamarinIoTWorkshop-github-bramin) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+4. Build & Deploy XamarinIoTWorkshop.iOS or XamarinIoTWorkshop.Android to your local iOS or Android device
 
 ## 2. Create IoT Central Device
 
