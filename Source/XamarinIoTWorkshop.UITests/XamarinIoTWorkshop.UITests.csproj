@@ -1,59 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98C2BF85-A212-4B20-8851-C75D2DA6D909}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>XamarinIoTWorkshop.UITests</RootNamespace>
-    <AssemblyName>XamarinIoTWorkshop.UITests</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.UITest">
-      <HintPath>..\packages\Xamarin.UITest.2.2.6\lib\net45\Xamarin.UITest.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Tests.cs" />
-    <Compile Include="AppInitializer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XamarinIoTWorkshop.Android\XamarinIoTWorkshop.Android.csproj">
-      <Project>{4B1BEE92-8DB9-41EF-8AAE-DA8124232934}</Project>
-      <Name>XamarinIoTWorkshop.Android</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\XamarinIoTWorkshop.iOS\XamarinIoTWorkshop.iOS.csproj">
-      <Project>{560E91A8-EC7F-4C33-BBBB-465F6E582B99}</Project>
-      <Name>XamarinIoTWorkshop.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="..\XamarinIoTWorkshop.Shared\XamarinIoTWorkshop.Shared.projitems" Label="Shared" Condition="Exists('..\XamarinIoTWorkshop.Shared\XamarinIoTWorkshop.Shared.projitems')" />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{98C2BF85-A212-4B20-8851-C75D2DA6D909}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <RootNamespace>XamarinIoTWorkshop.UITests</RootNamespace>
+        <AssemblyName>XamarinIoTWorkshop.UITests</AssemblyName>
+        <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="NUnit" Version="2.6.4" />
+        <PackageReference Include="Xamarin.UITest" Version="2.2.7.2001-dev" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Tests.cs" />
+        <Compile Include="AppInitializer.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\XamarinIoTWorkshop.Android\XamarinIoTWorkshop.Android.csproj">
+            <Project>{4B1BEE92-8DB9-41EF-8AAE-DA8124232934}</Project>
+            <Name>XamarinIoTWorkshop.Android</Name>
+            <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+            <Private>False</Private>
+        </ProjectReference>
+        <ProjectReference Include="..\XamarinIoTWorkshop.iOS\XamarinIoTWorkshop.iOS.csproj">
+            <Project>{560E91A8-EC7F-4C33-BBBB-465F6E582B99}</Project>
+            <Name>XamarinIoTWorkshop.iOS</Name>
+            <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+            <Private>False</Private>
+        </ProjectReference>
+    </ItemGroup>
+    <Import Project="..\XamarinIoTWorkshop.Shared\XamarinIoTWorkshop.Shared.projitems" Label="Shared" Condition="Exists('..\XamarinIoTWorkshop.Shared\XamarinIoTWorkshop.Shared.projitems')" />
+    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

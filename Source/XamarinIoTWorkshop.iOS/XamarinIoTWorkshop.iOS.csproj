@@ -162,34 +162,37 @@
       <Version>4.0.0.13</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Azure.Devices.Client">
-      <Version>1.18.0</Version>
+      <Version>1.18.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
-      <Version>0.8.0-preview</Version>
+      <Version>0.11.0-preview</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfGauge">
-      <Version>16.3.0.21</Version>
+      <Version>16.3.0.36</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.2</Version>
+      <Version>12.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.TestCloud.Agent">
       <Version>0.21.7</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>3.2.0.839982</Version>
+      <Version>3.4.0.1008975</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.Maps">
-      <Version>3.2.0.839982</Version>
+      <Version>3.4.0.1008975</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter">
-      <Version>1.9.0</Version>
+      <Version>1.11.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>1.9.0</Version>
+      <Version>1.11.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>1.9.0</Version>
+      <Version>1.11.0</Version>
+    </PackageReference>
+    <PackageReference Include="AsyncAwaitBestPractices.MVVM">
+      <Version>1.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.projitems" Label="Shared" Condition="Exists('..\XamarinIoTWorkshop.SyncFusion.Shared\XamarinIoTWorkshop.SyncFusion.Shared.projitems')" />

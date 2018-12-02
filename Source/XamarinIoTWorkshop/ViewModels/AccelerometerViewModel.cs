@@ -53,7 +53,7 @@ namespace XamarinIoTWorkshop
             }
         }
 
-        void HandleAccelerometerReadingChanged(AccelerometerChangedEventArgs e) => UpdateAxisValues(e.Reading.Acceleration);
+        void HandleAccelerometerReadingChanged(object sender, AccelerometerChangedEventArgs e) => UpdateAxisValues(e.Reading.Acceleration);
         #endregion
     }
 }

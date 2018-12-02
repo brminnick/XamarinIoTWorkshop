@@ -42,7 +42,7 @@ namespace XamarinIoTWorkshop
             }
         }
 
-        void HandleGyroscopeReadingChanged(GyroscopeChangedEventArgs e) => UpdateAxisValues(e.Reading.AngularVelocity);
+        private void HandleGyroscopeReadingChanged(object sender, GyroscopeChangedEventArgs e) => UpdateAxisValues(e.Reading.AngularVelocity);
 
         protected override async Task SendIoTData()
         {

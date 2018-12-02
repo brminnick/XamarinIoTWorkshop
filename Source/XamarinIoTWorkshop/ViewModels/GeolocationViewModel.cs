@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+using AsyncAwaitBestPractices.MVVM;
+
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -22,10 +24,10 @@ namespace XamarinIoTWorkshop
 
         #region Properties
         ICommand StartGeolocationCommand => _startGeolocationCommand ??
-            (_startGeolocationCommand = new Command(async () => await StartGeolocationDataCollection().ConfigureAwait(false)));
+            (_startGeolocationCommand = new AsyncCommand(StartGeolocationDataCollection, continueOnCapturedContext: false));
 
         ICommand SendMessage => _sendMessage ??
-            (_sendMessage = new Command<Location>(async location =>
+            (_sendMessage = new AsyncCommand<Location>(location =>
             {
                 var geolocationData = new GeolocationDataModel
                 {
@@ -33,8 +35,8 @@ namespace XamarinIoTWorkshop
                     Longitude = location.Longitude
                 };
 
-                await IoTDeviceService.SendMessage(geolocationData).ConfigureAwait(false);
-            }));
+                return IoTDeviceService.SendMessage(geolocationData);
+            }, continueOnCapturedContext: false));
 
         Location MostRecentLocation
         {
