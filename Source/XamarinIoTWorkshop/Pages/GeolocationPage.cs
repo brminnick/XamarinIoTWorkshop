@@ -8,7 +8,7 @@ namespace XamarinIoTWorkshop
 {
     public class GeolocationPage : BaseContentPage<GeolocationViewModel>
     {
-        readonly Map _map;
+        readonly Xamarin.Forms.Maps.Map _map;
         readonly Distance _distance = Distance.FromMiles(5);
 
         public GeolocationPage()
@@ -16,7 +16,7 @@ namespace XamarinIoTWorkshop
             Icon = "Geolocation";
             Title = "Geolocation";
 
-            _map = new Map { IsShowingUser = true };
+            _map = new Xamarin.Forms.Maps.Map { IsShowingUser = true };
 
             ViewModel.LocationUpdated += HandleLocationUpdated;
             GeolocationService.GeolocationFailed += HandleGeolocationFailed;
