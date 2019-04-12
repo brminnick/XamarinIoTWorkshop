@@ -26,7 +26,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="NUnit" Version="2.6.4" />
-        <PackageReference Include="Xamarin.UITest" Version="2.2.7.2001-dev" />
+        <PackageReference Include="Xamarin.UITest" Version="2.2.7.2002-dev" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Tests.cs" />
