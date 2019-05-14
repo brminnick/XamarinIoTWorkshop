@@ -7,9 +7,9 @@
 
 # About
 
-This workshop will connect your mobile device to an [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/?WT.mc_id=XamarinIoTWorkshop-github-bramin) backend using a mobile app created in [Xamarin](https://visualstudio.microsoft.com/xamarin/?WT.mc_id=XamarinIoTWorkshop-github-bramin) and [Azure IoT Central](https://azure.microsoft.com/services/iot-central/?WT.mc_id=XamarinIoTWorkshop-github-bramin).
+This workshop will connect your mobile device to an [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub?WT.mc_id=XamarinIoTWorkshop-github-bramin) backend using a mobile app created in [Xamarin](https://visualstudio.microsoft.com/xamarin?WT.mc_id=XamarinIoTWorkshop-github-bramin) and [Azure IoT Central](https://azure.microsoft.com/services/iot-central?WT.mc_id=XamarinIoTWorkshop-github-bramin).
 
-The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials/) to gather sensor data from the device's Accelerometer & Gyroscope, displays the data in the app using [Syncfusion's Circular Gauge control](https://www.syncfusion.com/products/xamarin/circular-gauge), and then sends the sensor data to the IoT Central Portal where we can view the data.
+The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials?WT.mc_id=XamarinIoTWorkshop-github-bramin) to gather sensor data from the device's Accelerometer & Gyroscope, displays the data in the app using [Syncfusion's Circular Gauge control](https://www.syncfusion.com/products/xamarin/circular-gauge), and then sends the sensor data to the IoT Central Portal where we can view the data.
 
 | Mobile App              | Sending Data to IoT Central Dashboard |
 :-------------------------|:-------------------------:
@@ -31,7 +31,7 @@ The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials/
 
 ## 2. Create IoT Central Device
 
-1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com/)
+1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com?WT.mc_id=XamarinIoTWorkshop-github-bramin)
 2. If requested, sign in with your Microsoft account
     - You can use any Microsoft-connected account, e.g. Azure account, Live account, Hotmail account, etc.
     - If you do not have a Microsoft-connected account, now is a great time to create one!
@@ -76,7 +76,7 @@ The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials/
 
 ## 5. Add Measurements to IoT Central Device
 
-1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com/)
+1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.comhttps://apps.azureiotcentral.com?WT.mc_id=XamarinIoTWorkshop-github-bramin)
 2. If requested, sign in with your Microsoft account
 3. On the **Mobile Device** page, select **New Measurement** -> **Telemetry**
 
@@ -223,11 +223,11 @@ As you rotate your phone, the guages in the app will update and the data will ap
 
 # Resources
 
-- [App Center](https://appcenter.ms)
-- [Azure IoT Central](https://azure.microsoft.com/services/iot-central/?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+- [App Center](https://appcenter.ms?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+- [Azure IoT Central](https://azure.microsoft.com/services/iot-central?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+- [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub?WT.mc_id=XamarinIoTWorkshop-github-bramin)
 - [Syncfusion's Circular Gauge control](https://www.syncfusion.com/products/xamarin/circular-gauge)
-- [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Visual Studio on PC](https://visualstudio.microsoft.com/vs/?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Xamarin](https://visualstudio.microsoft.com/xamarin/?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials/)
+- [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+- [Visual Studio on PC](https://visualstudio.microsoft.com/vs?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+- [Xamarin](https://visualstudio.microsoft.com/xamarin?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+- [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials?WT.mc_id=XamarinIoTWorkshop-github-bramin)
