@@ -20,17 +20,8 @@ echo UITestDLL: $UITestDLL
 UITestBuildDir=`dirname $UITestDLL`
 echo UITestBuildDir: $UITestBuildDir
 
-UITestVersionNumber=`grep '[0-9]' $UITestProject | grep Xamarin.UITest|grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,10\}\-'dev`
-echo UITestPrereleaseVersionNumber: $UITestVersionNumber
-
-UITestVersionNumberSize=${#UITestVersionNumber} 
-echo UITestVersionNumberSize: $UITestVersionNumberSize
-
-if [ $UITestVersionNumberSize == 0 ]
-then
-    UITestVersionNumber=`grep '[0-9]' $UITestProject | grep Xamarin.UITest|grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'`
-    echo UITestVersionNumber: $UITestVersionNumber
-fi
+UITestVersionNumber=`grep '[0-9]' $UITestProject | grep Xamarin.UITest|grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'`
+echo UITestVersionNumber: $UITestVersionNumber
 
 TestCloudExe=`find ~/.nuget | grep test-cloud.exe | grep $UITestVersionNumber | head -1`
 echo TestCloudExe: $TestCloudExe
@@ -41,7 +32,7 @@ echo TestCloudExeDirectory: $TestCloudExeDirectory
 APKFile=`find "$APPCENTER_SOURCE_DIRECTORY" -name *.apk | head -1`
 echo APKFile: $APKFile
 
-npm install -g appcenter-cli
+npm install -g appcenter-cli@1.2.2
 
 appcenter login --token token
 
