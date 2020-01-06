@@ -31,7 +31,7 @@ The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials?
 
 ## 2. Create IoT Central Device
 
-1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+1. On your computer, open a browser and navigate to [Azure IoT Central](https://apps.azureiotcentral.com/myapps?WT.mc_id=XamarinIoTWorkshop-github-bramin)
 2. If requested, sign in with your Microsoft account
     - You can use any Microsoft-connected account, e.g. Azure account, Live account, Hotmail account, etc.
     - If you do not have a Microsoft-connected account, now is a great time to create one!
