@@ -14,7 +14,7 @@ namespace XamarinIoTWorkshop
             var gyroscopePage = new GyroscopePage();
             var settingsNavigationPage = new Xamarin.Forms.NavigationPage(new SettingsPage())
             {
-                Icon = "Settings",
+                IconImageSource = "Settings",
                 Title = "Settings",
                 BarBackgroundColor = Xamarin.Forms.Color.White,
                 BarTextColor = Xamarin.Forms.Color.Black

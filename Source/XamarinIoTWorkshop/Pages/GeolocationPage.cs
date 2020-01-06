@@ -6,14 +6,14 @@ using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
 {
-    public class GeolocationPage : BaseContentPage<GeolocationViewModel>
+    class GeolocationPage : BaseContentPage<GeolocationViewModel>
     {
         readonly Xamarin.Forms.Maps.Map _map;
         readonly Distance _distance = Distance.FromMiles(5);
 
         public GeolocationPage()
         {
-            Icon = "Geolocation";
+            IconImageSource = "Geolocation";
             Title = "Geolocation";
 
             _map = new Xamarin.Forms.Maps.Map { IsShowingUser = true };

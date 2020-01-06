@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
-
+using AsyncAwaitBestPractices;
 using Microsoft.Azure.Devices.Client;
 
 using Newtonsoft.Json;
@@ -10,29 +10,27 @@ namespace XamarinIoTWorkshop
 {
     public static class IoTDeviceService
     {
-        #region Fields
-        static DeviceClient _deviceClient;
-        #endregion
+        readonly static WeakEventManager<string> _ioTDeviceServiceFailedEventManager = new WeakEventManager<string>();
+        static DeviceClient? _deviceClient;
 
-        #region Constructors
         static IoTDeviceService() => IotHubSettings.DeviceConnectionStringChanged += HandleDeviceConnectionStringChanged;
-        #endregion
 
-        #region Events
-        public static event EventHandler<string> IoTDeviceServiceFailed;
-        #endregion
+        public static event EventHandler<string> IoTDeviceServiceFailed
+        {
+            add => _ioTDeviceServiceFailedEventManager.AddEventHandler(value);
+            remove => _ioTDeviceServiceFailedEventManager.RemoveEventHandler(value);
+        }
 
-        #region Methods
-        public static async Task SendMessage<T>(T data) where T : class
+        public static async Task SendMessage<T>(T data)
         {
             if (data is null)
                 return;
 
             try
             {
-                var jsonData = await Task.Run(() => JsonConvert.SerializeObject(data)).ConfigureAwait(false);
+                var jsonData = JsonConvert.SerializeObject(data);
 
-                var eventMessage = new Message(Encoding.UTF8.GetBytes(jsonData));
+                using var eventMessage = new Message(Encoding.UTF8.GetBytes(jsonData));
 
                 await SendEvent(eventMessage).ConfigureAwait(false);
             }
@@ -43,10 +41,9 @@ namespace XamarinIoTWorkshop
             }
         }
 
-        static DeviceClient GetDeviceClient() => _deviceClient ??
-            (_deviceClient = DeviceClient.CreateFromConnectionString(IotHubSettings.DeviceConnectionString));
+        static DeviceClient GetDeviceClient() => _deviceClient ??= DeviceClient.CreateFromConnectionString(IotHubSettings.DeviceConnectionString);
 
-        static async Task SendEvent(Message eventMessage)
+        static async ValueTask SendEvent(Message eventMessage)
         {
             if (!IotHubSettings.IsSendDataToAzureEnabled)
                 return;
@@ -60,10 +57,9 @@ namespace XamarinIoTWorkshop
         static void OnIoTDeviceServiceFailed(string message)
         {
             AppCenterService.TrackEvent("IoT Device Service Failed", "Message", message);
-            IoTDeviceServiceFailed?.Invoke(null, message);
+            _ioTDeviceServiceFailedEventManager.HandleEvent(null, message, nameof(IoTDeviceServiceFailed));
         }
 
         static void HandleDeviceConnectionStringChanged(object sender, EventArgs e) => _deviceClient = null;
-        #endregion
     }
 }

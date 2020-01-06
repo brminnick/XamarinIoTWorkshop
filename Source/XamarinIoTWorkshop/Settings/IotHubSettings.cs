@@ -1,34 +1,33 @@
 ﻿using System;
+using AsyncAwaitBestPractices;
+using Xamarin.Essentials;
 
 namespace XamarinIoTWorkshop
 {
-    public abstract class IotHubSettings : BaseSettings
+    public static class IotHubSettings
     {
-        #region Fields
-        static string _deviceConnectionString;
-        static bool _isSendDataToAzureEnabled;
-        #endregion
+        readonly static WeakEventManager _deviceConnectionStringChangedEventManager = new WeakEventManager();
 
-        #region Events
-        public static event EventHandler DeviceConnectionStringChanged;
-        #endregion
+        public static event EventHandler DeviceConnectionStringChanged
+        {
+            add => _deviceConnectionStringChangedEventManager.AddEventHandler(value);
+            remove => _deviceConnectionStringChangedEventManager.RemoveEventHandler(value);
+        }
 
-        #region Properties
         public static string DeviceConnectionString
         {
-            get => GetSetting(ref _deviceConnectionString);
+            get => Preferences.Get(nameof(DeviceConnectionString), string.Empty);
             set
             {
-                SetSetting(ref _deviceConnectionString, value);
-                DeviceConnectionStringChanged?.Invoke(null, EventArgs.Empty);
+                Preferences.Set(nameof(DeviceConnectionString), value);
+                _deviceConnectionStringChangedEventManager.HandleEvent(null, EventArgs.Empty, nameof(DeviceConnectionStringChanged));
             }
         }
 
         public static bool IsSendDataToAzureEnabled
         {
-            get => GetSetting(ref _isSendDataToAzureEnabled);
-            set => SetSetting(ref _isSendDataToAzureEnabled, value);
+            get => Preferences.Get(nameof(IsSendDataToAzureEnabled), true);
+            set => Preferences.Set(nameof(IsSendDataToAzureEnabled), value);
         }
-        #endregion
     }
 }

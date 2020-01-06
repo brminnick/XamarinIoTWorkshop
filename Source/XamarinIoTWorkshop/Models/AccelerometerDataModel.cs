@@ -2,8 +2,10 @@
 {
     public class AccelerometerDataModel
     {
-        public double AccelerometerX { get; set; }
-        public double AccelerometerY { get; set; }
-        public double AccelerometerZ { get; set; }
+        public AccelerometerDataModel(double x, double y, double z) => (X, Y, Z) = (x, y, z);
+
+        public double X { get; }
+        public double Y { get; }
+        public double Z { get; }
     }
 }

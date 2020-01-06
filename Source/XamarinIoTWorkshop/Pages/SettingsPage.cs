@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using AsyncAwaitBestPractices.MVVM;
 using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
@@ -52,7 +54,7 @@ namespace XamarinIoTWorkshop
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.End
             };
-            createdByLabel.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(CreatedByLabelTapped) });
+            createdByLabel.GestureRecognizers.Add(new TapGestureRecognizer { Command = new AsyncCommand(CreatedByLabelTapped) });
 
             var grid = new Grid
             {
@@ -86,7 +88,7 @@ namespace XamarinIoTWorkshop
             _isSendDataToAzureEnabledSwitch.IsToggled = IotHubSettings.IsSendDataToAzureEnabled;
         }
 
-        void CreatedByLabelTapped() => DependencyService.Get<IDeepLinks>().OpenTwitter();
+        Task CreatedByLabelTapped() => DeepLinkingService.OpenApp(TwitterConstants.BrandonMinnickTwitterDeepLink, TwitterConstants.BrandonMinnickTwitterUrl);
 
         void HandleIsSendDataToAzureEnabledSwitchToggled(object sender, ToggledEventArgs e) =>
             IotHubSettings.IsSendDataToAzureEnabled = _isSendDataToAzureEnabledSwitch.IsToggled;

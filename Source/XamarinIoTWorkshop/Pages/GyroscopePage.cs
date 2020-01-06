@@ -4,11 +4,11 @@ using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
 {
-    public class GyroscopePage : BaseContentPage<GyroscopeViewModel>
+    class GyroscopePage : BaseContentPage<GyroscopeViewModel>
     {
         public GyroscopePage()
         {
-            Icon = "Gyroscope";
+            IconImageSource = "Gyroscope";
             Title = "Gyroscope";
 
             var xCircularGauge = new CircularGaugeView("X-Axis", -1, 1);

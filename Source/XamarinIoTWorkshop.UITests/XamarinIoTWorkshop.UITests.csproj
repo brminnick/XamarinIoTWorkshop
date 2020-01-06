@@ -7,7 +7,10 @@
         <OutputType>Library</OutputType>
         <RootNamespace>XamarinIoTWorkshop.UITests</RootNamespace>
         <AssemblyName>XamarinIoTWorkshop.UITests</AssemblyName>
-        <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <Langversion>latest</Langversion>
+        <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugSymbols>true</DebugSymbols>
@@ -25,8 +28,8 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="NUnit" Version="2.6.4" />
-        <PackageReference Include="Xamarin.UITest" Version="2.2.7.2002-dev" />
+        <PackageReference Include="NUnit" Version="3.12.0" />
+        <PackageReference Include="Xamarin.UITest" Version="3.0.6-dev1" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Tests.cs" />

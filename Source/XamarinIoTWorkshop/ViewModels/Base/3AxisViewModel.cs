@@ -1,26 +1,16 @@
 ﻿using System;
 using System.Numerics;
-using System.Windows.Input;
 using System.Threading.Tasks;
-
+using AsyncAwaitBestPractices;
 using Xamarin.Forms;
 
 namespace XamarinIoTWorkshop
 {
-    public abstract class ThreeAxisViewModel : BaseViewModel
+    abstract class ThreeAxisViewModel : BaseViewModel
     {
-        #region Fields
         double _xAxisValue, _yAxisValue, _zAxisValue;
-        ICommand _sendDataCommand;
-        #endregion
 
-        #region Constructor
         protected ThreeAxisViewModel() => Device.StartTimer(TimeSpan.FromSeconds(1), SendData);
-        #endregion
-
-        #region Properties
-        protected ICommand SendDataCommand => _sendDataCommand ??
-            (_sendDataCommand = new Command(async () => await SendIoTData()));
 
         public double XAxisValue
         {
@@ -39,9 +29,7 @@ namespace XamarinIoTWorkshop
             get => _zAxisValue;
             set => SetProperty(ref _zAxisValue, value);
         }
-        #endregion
 
-        #region Methods
         protected override void StopDataCollection()
         {
             base.StopDataCollection();
@@ -58,12 +46,10 @@ namespace XamarinIoTWorkshop
 
         protected bool SendData()
         {
-            SendDataCommand?.Execute(null);
-
+            SendIoTData().SafeFireAndForget(ex => Console.WriteLine(ex));
             return true;
         }
 
         protected abstract Task SendIoTData();
     }
-    #endregion
 }

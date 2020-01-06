@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Analytics;
@@ -16,7 +15,7 @@ namespace XamarinIoTWorkshop
         [Conditional("DEBUG")]
         public static void CrashApp() => Crashes.GenerateTestCrash();
 
-        public static void TrackEvent(string trackIdentifier, IDictionary<string, string> table = null) =>
+        public static void TrackEvent(string trackIdentifier, IDictionary<string, string>? table = null) =>
             Analytics.TrackEvent(trackIdentifier, table);
 
         public static void TrackEvent(string trackIdentifier, string key, string value)
@@ -28,13 +27,11 @@ namespace XamarinIoTWorkshop
         }
 
         public static void Report(Exception exception,
-                          IDictionary<string, string> properties = null,
+                          IDictionary<string, string>? properties = null,
                           [CallerMemberName] string callerMemberName = "",
                           [CallerLineNumber] int lineNumber = 0,
                           [CallerFilePath] string filePath = "")
         {
-            var exceptionType = exception.GetType().ToString();
-            var message = exception.Message;
 
             PrintException(exception, callerMemberName, lineNumber, filePath);
 

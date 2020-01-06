@@ -4,9 +4,8 @@ using Xamarin.Essentials;
 
 namespace XamarinIoTWorkshop
 {
-    public class AccelerometerViewModel : ThreeAxisViewModel
+    class AccelerometerViewModel : ThreeAxisViewModel
     {
-        #region Methods
         protected override void StartDataCollection()
         {
             base.StartDataCollection();
@@ -41,19 +40,11 @@ namespace XamarinIoTWorkshop
         {
             if (IsDataCollectionActive)
             {
-
-                var accelerometerData = new AccelerometerDataModel
-                {
-                    AccelerometerX = XAxisValue,
-                    AccelerometerY = YAxisValue,
-                    AccelerometerZ = ZAxisValue
-                };
-
+                var accelerometerData = new AccelerometerDataModel(XAxisValue, YAxisValue, ZAxisValue);
                 await IoTDeviceService.SendMessage(accelerometerData).ConfigureAwait(false);
             }
         }
 
         void HandleAccelerometerReadingChanged(object sender, AccelerometerChangedEventArgs e) => UpdateAxisValues(e.Reading.Acceleration);
-        #endregion
     }
 }

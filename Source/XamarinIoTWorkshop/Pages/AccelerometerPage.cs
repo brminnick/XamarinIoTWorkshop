@@ -4,11 +4,11 @@ using Syncfusion.SfGauge.XForms;
 
 namespace XamarinIoTWorkshop
 {
-    public class AccelerometerPage : BaseContentPage<AccelerometerViewModel>
+    class AccelerometerPage : BaseContentPage<AccelerometerViewModel>
     {
         public AccelerometerPage()
         {
-            Icon = "Accelerometer";
+            IconImageSource = "Accelerometer";
             Title = "Accelerometer";
 
             var xCircularGauge = new CircularGaugeView("X-Axis", -1, 1);

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-
+using AsyncAwaitBestPractices;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -8,43 +8,35 @@ namespace XamarinIoTWorkshop
 {
     public static class GeolocationService
     {
-        #region Constant Fields
+        static readonly WeakEventManager<Exception> _geolocationFailedEventManager = new WeakEventManager<Exception>();
         static readonly Lazy<GeolocationRequest> _geolocationRequestHolder = new Lazy<GeolocationRequest>(() => new GeolocationRequest(GeolocationAccuracy.Best));
-        #endregion
 
-        #region Events
-        public static event EventHandler<Exception> GeolocationFailed;
-        #endregion
+        public static event EventHandler<Exception> GeolocationFailed
+        {
+            add => _geolocationFailedEventManager.AddEventHandler(value);
+            remove => _geolocationFailedEventManager.RemoveEventHandler(value);
+        }
 
-        #region Properties
         static GeolocationRequest GeolocationRequest => _geolocationRequestHolder.Value;
-        #endregion
 
-        #region Methods
         public static Task<Location> GetLocation()
         {
-            var tcs = new TaskCompletionSource<Location>();
-
-            Device.BeginInvokeOnMainThread(async () =>
+            return Device.InvokeOnMainThreadAsync(async () =>
             {
                 try
                 {
-                    var location = await Geolocation.GetLocationAsync(GeolocationRequest).ConfigureAwait(false);
-                    tcs.SetResult(location);
+                    return await Geolocation.GetLocationAsync(GeolocationRequest).ConfigureAwait(false);
                 }
                 catch (Exception e)
                 {
                     OnGeolocationFailed(e);
                     AppCenterService.Report(e);
 
-                    tcs.SetException(e);
+                    throw;
                 }
             });
-
-            return tcs.Task;
         }
 
-        static void OnGeolocationFailed(Exception exception) => GeolocationFailed?.Invoke(null, exception);
-        #endregion
+        static void OnGeolocationFailed(Exception exception) => _geolocationFailedEventManager.HandleEvent(null, exception, nameof(GeolocationFailed));
     }
 }

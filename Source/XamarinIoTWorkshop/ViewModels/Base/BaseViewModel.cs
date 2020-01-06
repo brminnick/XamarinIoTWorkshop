@@ -3,38 +3,48 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-
+using AsyncAwaitBestPractices;
 using Xamarin.Forms;
 
 using XamarinIoTWorkshop.Shared;
 
 namespace XamarinIoTWorkshop
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    abstract class BaseViewModel : INotifyPropertyChanged
     {
-        #region Fields
+        readonly WeakEventManager _propertyChangedEventHandler = new WeakEventManager();
+        readonly WeakEventManager<Type> _featureNotSupportedExceptionThrownEventHandler = new WeakEventManager<Type>();
+        readonly WeakEventManager<bool> _dataCollectionStatusChangedEventHandler = new WeakEventManager<bool>();
+
         bool _isDataCollectionActive;
         string _dataCollectionButtonText = ButtonTextConstants.EndDataCollectionText;
-        ICommand _dataCollectionButtonCommand;
-        #endregion
+        ICommand? _dataCollectionButtonCommand;
 
-        #region Constructors
-        public BaseViewModel()
+        protected BaseViewModel()
         {
             IoTDeviceService.IoTDeviceServiceFailed += HandleIoTDeviceServiceFailed;
             StartDataCollection();
         }
-        #endregion
 
-        #region Events
-        public event PropertyChangedEventHandler PropertyChanged;
-        public event EventHandler<bool> DataCollectionStatusChanged;
-        public event EventHandler<Type> FeatureNotSupportedExceptionThrown;
-        #endregion
+        public event EventHandler<bool> DataCollectionStatusChanged
+        {
+            add => _dataCollectionStatusChangedEventHandler.AddEventHandler(value);
+            remove => _dataCollectionStatusChangedEventHandler.RemoveEventHandler(value);
+        }
 
-        #region Properties
-        public ICommand DataCollectionButtonCommand => _dataCollectionButtonCommand ??
-            (_dataCollectionButtonCommand = new Command(ExecuteDataCollectionButtonCommand));
+        public event EventHandler<Type> FeatureNotSupportedExceptionThrown
+        {
+            add => _featureNotSupportedExceptionThrownEventHandler.AddEventHandler(value);
+            remove => _featureNotSupportedExceptionThrownEventHandler.RemoveEventHandler(value);
+        }
+
+        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
+        {
+            add => _propertyChangedEventHandler.AddEventHandler(value);
+            remove => _propertyChangedEventHandler.RemoveEventHandler(value);
+        }
+
+        public ICommand DataCollectionButtonCommand => _dataCollectionButtonCommand ??= new Command(ExecuteDataCollectionButtonCommand);
 
         public string DataCollectionButtonText
         {
@@ -47,20 +57,12 @@ namespace XamarinIoTWorkshop
             get => _isDataCollectionActive;
             private set => SetProperty(ref _isDataCollectionActive, value, () => OnDataCollectionStatusChanged(value));
         }
-        #endregion
 
-        #region Methods
-        protected virtual void StartDataCollection()
-        {
-            IsDataCollectionActive = true;
-        }
+        protected virtual void StartDataCollection() => IsDataCollectionActive = true;
 
-        protected virtual void StopDataCollection()
-        {
-            IsDataCollectionActive = false;
-        }
+        protected virtual void StopDataCollection() => IsDataCollectionActive = false;
 
-        protected void SetProperty<T>(ref T backingStore, T value, Action onChanged = null, [CallerMemberName] string propertyname = "")
+        protected void SetProperty<T>(ref T backingStore, in T value, in Action? onChanged = null, [CallerMemberName] in string propertyname = "")
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))
                 return;
@@ -81,7 +83,7 @@ namespace XamarinIoTWorkshop
         protected void OnFeatureNotSupportedExceptionThrown(Type xamarinEssentialsType)
         {
             AppCenterService.TrackEvent("Feature Not Supported Exception Thrown", "Type", xamarinEssentialsType.Name);
-            FeatureNotSupportedExceptionThrown?.Invoke(this, xamarinEssentialsType);
+            _featureNotSupportedExceptionThrownEventHandler.HandleEvent(this, xamarinEssentialsType, nameof(FeatureNotSupportedExceptionThrown));
         }
 
         void ExecuteDataCollectionButtonCommand()
@@ -102,13 +104,12 @@ namespace XamarinIoTWorkshop
             }
         }
 
-        void OnPropertyChanged([CallerMemberName]string name = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
         void OnDataCollectionStatusChanged(bool isCollectingData)
         {
             AppCenterService.TrackEvent("Data Collection Changed", "IsEnabled", isCollectingData.ToString());
-            DataCollectionStatusChanged?.Invoke(this, isCollectingData);
+            _dataCollectionStatusChangedEventHandler.HandleEvent(this, isCollectingData, nameof(DataCollectionStatusChanged));
         }
-        #endregion
+
+        void OnPropertyChanged([CallerMemberName]string name = "") => _propertyChangedEventHandler.HandleEvent(this, new PropertyChangedEventArgs(name), nameof(INotifyPropertyChanged.PropertyChanged));
     }
 }
