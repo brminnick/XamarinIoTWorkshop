@@ -15,7 +15,7 @@ chmod -R 777 $SolutionFileFolder
 
 msbuild "$UITestProject" /property:Configuration=$APPCENTER_XAMARIN_CONFIGURATION
 
-UITestDLL=`find "$APPCENTER_SOURCE_DIRECTORY" -name "XamarinIoTWorkshop.UITests.dll" | grep bin | head -1`
+UITestDLL=`find "$APPCENTER_SOURCE_DIRECTORY" -name "XamarinIoTWorkshop.UITests.dll" | grep bin  | grep -v ref | head -1`
 echo UITestDLL: $UITestDLL
 
 UITestBuildDir=`dirname $UITestDLL`
