@@ -36,4 +36,4 @@ npm install -g appcenter-cli@1.2.2
 
 appcenter login --token token
 
-appcenter test run uitest --app "Xamarin-IoT-Workshop/XamarinIoTWorkshop-Android" --devices "Xamarin-IoT-Workshop/all-android-os" --app-path $APKFile --test-series "master" --locale "en_US" --build-dir $UITestBuildDir --uitest-tools-dir $TestCloudExeDirectory
+appcenter test run uitest --app "CDA-Global-Beta/XamarinIoTWorkshop-Android" --devices "CDA-Global-Beta/android-os-v5-10" --app-path $APKFile --test-series "master" --locale "en_US" --build-dir $UITestBuildDir --uitest-tools-dir $TestCloudExeDirectory
