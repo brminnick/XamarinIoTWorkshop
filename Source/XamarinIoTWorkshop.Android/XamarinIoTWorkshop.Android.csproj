@@ -37,7 +37,7 @@
         <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
         <AndroidTlsProvider>btls</AndroidTlsProvider>
         <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-        <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
+        <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
         <AotAssemblies>false</AotAssemblies>
         <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
         <AndroidDexTool>d8</AndroidDexTool>
