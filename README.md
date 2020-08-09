@@ -7,9 +7,9 @@
 
 # About
 
-This workshop will connect your mobile device to an [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub?WT.mc_id=XamarinIoTWorkshop-github-bramin) backend using a mobile app created in [Xamarin](https://visualstudio.microsoft.com/xamarin?WT.mc_id=XamarinIoTWorkshop-github-bramin) and [Azure IoT Central](https://azure.microsoft.com/services/iot-central?WT.mc_id=XamarinIoTWorkshop-github-bramin).
+This workshop will connect your mobile device to an [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub?WT.mc_id=xamariniotworkshop-github-bramin) backend using a mobile app created in [Xamarin](https://visualstudio.microsoft.com/xamarin?WT.mc_id=xamariniotworkshop-github-bramin) and [Azure IoT Central](https://azure.microsoft.com/services/iot-central?WT.mc_id=xamariniotworkshop-github-bramin).
 
-The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials?WT.mc_id=XamarinIoTWorkshop-github-bramin) to gather sensor data from the device's Accelerometer & Gyroscope, displays the data in the app using [Syncfusion's Circular Gauge control](https://www.syncfusion.com/products/xamarin/circular-gauge), and then sends the sensor data to the IoT Central Portal where we can view the data.
+The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials?WT.mc_id=xamariniotworkshop-github-bramin) to gather sensor data from the device's Accelerometer & Gyroscope, displays the data in the app using [Syncfusion's Circular Gauge control](https://www.syncfusion.com/products/xamarin/circular-gauge), and then sends the sensor data to the IoT Central Portal where we can view the data.
 
 | Mobile App              | Sending Data to IoT Central Dashboard |
 :-------------------------|:-------------------------:
@@ -26,7 +26,7 @@ The app uses [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials?
 ![Clone](https://user-images.githubusercontent.com/13558917/45580869-83982380-b8d9-11e8-8ed2-8415ac6480b3.png)
 
 2. After downloading/cloning the repo, locate `XamarinIoTWorkshop.sln`
-3. Launch `XamarinIoTWorkshop.sln` in [Visual Studio on PC](https://visualstudio.microsoft.com/vs/?WT.mc_id=XamarinIoTWorkshop-github-bramin) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+3. Launch `XamarinIoTWorkshop.sln` in [Visual Studio on PC](https://visualstudio.microsoft.com/vs/?WT.mc_id=xamariniotworkshop-github-bramin) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?WT.mc_id=xamariniotworkshop-github-bramin)
 4. Build & Deploy XamarinIoTWorkshop.iOS or XamarinIoTWorkshop.Android to your local iOS or Android device
 
 ## 2. Create IoT Central Device
@@ -224,10 +224,10 @@ As you rotate your phone, the guages in the app will update and the data will ap
 # Resources
 
 - [App Center](https://appcenter.ms?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Azure IoT Central](https://azure.microsoft.com/services/iot-central?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+- [Azure IoT Central](https://azure.microsoft.com/services/iot-central?WT.mc_id=xamariniotworkshop-github-bramin)
+- [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub?WT.mc_id=xamariniotworkshop-github-bramin)
 - [Syncfusion's Circular Gauge control](https://www.syncfusion.com/products/xamarin/circular-gauge)
-- [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Visual Studio on PC](https://visualstudio.microsoft.com/vs?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Xamarin](https://visualstudio.microsoft.com/xamarin?WT.mc_id=XamarinIoTWorkshop-github-bramin)
-- [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials?WT.mc_id=XamarinIoTWorkshop-github-bramin)
+- [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac?WT.mc_id=xamariniotworkshop-github-bramin)
+- [Visual Studio on PC](https://visualstudio.microsoft.com/vs?WT.mc_id=xamariniotworkshop-github-bramin)
+- [Xamarin](https://visualstudio.microsoft.com/xamarin?WT.mc_id=xamariniotworkshop-github-bramin)
+- [Xamarin Essentials](https://docs.microsoft.com/xamarin/essentials?WT.mc_id=xamariniotworkshop-github-bramin)
